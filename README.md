@@ -1,16 +1,34 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Integrantes
+- Fabian Muñoz (fa.munoz2@duocuc.cl)
+- Jonathan Pozo (jon.pozo@duocuc.cl)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Caso
+Sonido Vivo
 
-## React Compiler
+## Descripción del caso
+Tienda en línea de instrumentos musicales.
+La aplicación permite iniciar sesión, explorar el catálogo, agregar productos
+al carrito y, para el rol administrador, gestionar el catálogo.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Estructura del proyecto
+src/
+├── components/
+│   ├── atoms/
+│   ├── molecules/
+│   ├── organisms/
+│   └── templates/
+└── pages/
 
-## Expanding the ESLint configuration
+## Tecnologías
+- React + Vite
+- React Bootstrap
+- git
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Cómo ejecutar el proyecto
+npm install
+npm run dev
+
+## Material complementario
+https://drive.google.com/drive/folders/1vgA0f8f0bYEU_cqbdvunBZYgfk0wdNyZ?usp=drive_link
