@@ -4,9 +4,11 @@ import Col from 'react-bootstrap/Col';
 import './App.css'; 
 
 import FormularioLogin from './components/organisms/FormularioLogin';
+import TarjetaProducto from './components/molecules/TarjetaProducto';
 
 function App() {
     return (
+        <>
         <Container>
             <Row className="justify-content-center">
                 <Col md={6}>
@@ -18,7 +20,18 @@ function App() {
                 </Col>
             </Row>
         </Container>
+
+
+        <TarjetaProducto
+        nombre="guitarra"
+        imagen="img/guitarras/GA1.png"
+        valor={250000}
+        disponible={true}
+        />
+        </>
+
     );
+
 }
 
 export default App;
