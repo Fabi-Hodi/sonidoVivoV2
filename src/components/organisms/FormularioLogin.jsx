@@ -24,7 +24,7 @@ function FormularioLogin(props) {
             />
 
             <Boton
-                texto="Iniciar sesión"
+                nombreBoton="Iniciar sesión"
                 variante="primary"
             />
 
