@@ -3,12 +3,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './App.css'; 
 
+import NavBar from './components/organisms/Navbar';
 import FormularioLogin from './components/organisms/FormularioLogin';
 import TarjetaProducto from './components/molecules/TarjetaProducto';
 
 function App() {
     return (
         <>
+        <NavBar />
+
         <Container>
             <Row className="justify-content-center">
                 <Col md={6}>
@@ -16,7 +19,7 @@ function App() {
                         Iniciar sesión
                     </h1>
 
-                    <FormularioLogin />
+                        <FormularioLogin />
                 </Col>
             </Row>
         </Container>
@@ -27,7 +30,7 @@ function App() {
         imagen="img/guitarras/GA1.png"
         valor={250000}
         disponible={true}
-        />
+        /> 
         </>
 
     );

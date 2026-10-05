@@ -1,8 +1,11 @@
-function ContadorCantidad({ cantidad }) {
+function ContadorCantidad(props) {
   return (
-    <span>
-      Cantidad: {cantidad}
-    </span>
+    
+      <input type="number" className="form-control" 
+      style={{ width: '80px' }} 
+      defaultValue={props.cantidad || 1} 
+      />
+    
   );
 }
 
