@@ -12,14 +12,14 @@ function App() {
         <>
         <NavBar />
 
-        <Container>
-            <Row className="justify-content-center">
-                <Col md={6}>
-                    <h1 className="text-center mb-4 login-titulo">
+        <Container> 
+            <Row className="justify-content-center"> 
+                <Col md={6}> 
+                    <h1 className="text-center mb-4" style={{color: 'brown'}}> 
                         Iniciar sesión
                     </h1>
-
-                        <FormularioLogin />
+                    
+                    <FormularioLogin /> 
                 </Col>
             </Row>
         </Container>

@@ -1,11 +1,11 @@
-import GrupoFormu from '../molecules/GrupoFormu';
 import Boton from '../atoms/Boton';
+import Input from '../atoms/Input'
 
 function FormularioLogin(props) {
     return (
         <form onSubmit={props.onSubmit}>
-
-            <GrupoFormu
+        <div className='mb-2'> {/*lo que hace separa el correo con la contraseña le da un margen */}
+            <Input
                 id="correo"
                 textoLabel="Correo"
                 tipo="email"
@@ -13,8 +13,10 @@ function FormularioLogin(props) {
                 valor={props.correo}
                 onChange={props.onCorreoChange}
             />
-
-            <GrupoFormu
+        </div>
+        
+        <div className='mb-2'>
+            <Input
                 id="password"
                 textoLabel="Contraseña"
                 tipo="password"
@@ -22,11 +24,14 @@ function FormularioLogin(props) {
                 valor={props.password}
                 onChange={props.onPasswordChange}
             />
+        </div>
 
+        <div className='mb-3'>
             <Boton
                 nombreBoton="Iniciar sesión"
                 variante="primary"
             />
+        </div>
 
         </form>
     );
