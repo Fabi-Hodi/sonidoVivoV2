@@ -13,7 +13,7 @@ function Login() {
             <Row className="justify-content-center"> 
                 <Col md={6}> 
                     <h1 className="text-center mb-4" style={{color: 'brown'}}> 
-                        Iniciar sesión
+                        Iniciar sesión prueba
                     </h1>
                     
                     <FormularioLogin /> 
