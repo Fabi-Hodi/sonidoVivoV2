@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
+import Catalogo from "./pages/Catalogo";
 
 
 
@@ -9,6 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/Catalogo" element={<Catalogo />} />
       </Routes>
     </BrowserRouter>
     );

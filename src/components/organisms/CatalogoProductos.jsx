@@ -17,6 +17,16 @@ function CatalogoProductos() {
                         disponible={true}
                     />
                 </Col>
+
+                {/* Guitarra 2 */}
+                <Col md={4} className="d-flex justify-content-left">
+                    <TarjetaProducto
+                        nombre="Guitarra 2"
+                        imagen="img/guitarras/GA2.png"
+                        valor={239990}
+                        disponible={true}
+                    />
+                </Col>
             </Row>
         </Container>
     );
