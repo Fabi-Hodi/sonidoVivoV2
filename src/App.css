@@ -2,3 +2,9 @@
 body {
   background-color: #2B1D14; 
 }
+
+.boton-login button {
+  background-color: #edb040 !important;
+  border-color: #edb040 !important;
+  color: #000000 !important;
+}

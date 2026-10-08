@@ -26,7 +26,7 @@ function FormularioLogin(props) {
             />
         </div>
 
-        <div className='mb-3'>
+        <div className='mb-3 boton-login'>
             <Boton
                 nombreBoton="Iniciar sesión"
                 variante="primary"
