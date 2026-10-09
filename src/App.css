@@ -12,13 +12,6 @@ body {
 
 
 
-
-
-
-
-
-
-
 .footer {
   background: #2B1D14;
   color: white;
@@ -26,3 +19,32 @@ body {
   padding: 14px;
   margin-top: 40px;
 }
+
+
+/*Catalogo*/
+
+.img-Catalogo {
+  height: 300px;
+  object-fit: contain;
+}
+
+.borde-catalogo {
+  width: 15rem;
+  background-color: #2B1D14;
+  display: flex;
+  border: 1px solid #edb040;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px 0px 10px 0px;
+}
+
+.titulo-producto {
+  color: #ffffff; 
+}
+
+.precio-producto {
+  color: #ffffff; 
+}
+
+
+

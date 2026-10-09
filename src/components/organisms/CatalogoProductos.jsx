@@ -19,11 +19,21 @@ function CatalogoProductos() {
                 </Col>
 
                 {/* Guitarra 2 */}
-                <Col md={4} className="d-flex justify-content-left">
+                <Col md={4} className="d-flex justify-content-center">
                     <TarjetaProducto
                         nombre="Guitarra 2"
                         imagen="img/guitarras/GA2.png"
                         valor={239990}
+                        disponible={true}
+                    />
+                </Col>
+
+                {/* Guitarra 3 */}
+                <Col md={4} className="d-flex justify-content-center">
+                    <TarjetaProducto
+                        nombre="Guitarra 3"
+                        imagen="img/guitarras/GA3.png"
+                        valor={258490}
                         disponible={true}
                     />
                 </Col>
