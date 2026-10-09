@@ -9,7 +9,7 @@ function NavBar() {
             
             <Container>
 
-                <Navbar.Brand href="/" className="d-flex align-items-center">
+                <Navbar.Brand as={Link} to={"/"} className="d-flex align-items-center">
                     <img
                         src="src/assets/logo.png" 
                         alt="Logo de Tu sonido, tu mundo"
@@ -27,6 +27,7 @@ function NavBar() {
                     <Nav className="ms-auto">
                         <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                         <Nav.Link as={Link} to="/catalogo">Catálogo</Nav.Link>
+                        <Nav.Link as={Link} to="/login">Iniciar Sesión</Nav.Link>
                         <Nav.Link as={Link} to="/carrito" className="text-warning">🛒 (0)</Nav.Link>
                     </Nav>
                     

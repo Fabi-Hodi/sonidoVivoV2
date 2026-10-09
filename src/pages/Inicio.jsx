@@ -4,13 +4,14 @@ import { PlantillaPublica } from "../components/templates/PlantillaPublica";
 function Inicio(props){
     return(
         <PlantillaPublica>
-           <div className="container mt-5">
-                <h1>Bienvenido a SonidoVivo</h1>
-                <p>Aquí va el contenido del inicio...</p>
-            </div>
-
-
-            <label>prueba</label>
+            <section class="banner">
+           
+                <div className="container mt-5">
+                    <h1 class="text-banner">Tu sonido, <br/>
+                        tu mundo.</h1>
+                    <p class="text-banner">Encuentra el instrumento perfecto para expresar quien eres.</p>
+                </div>
+            </section>
         </PlantillaPublica>
     );
 }

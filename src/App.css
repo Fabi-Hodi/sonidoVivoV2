@@ -17,6 +17,44 @@ body {
 
 
 
+
+
+/* BANNER---------------------------------------------------- */
+.banner{
+    display: flex;
+    background-image: url('/src/assets/fondoBanner.png');
+    background-size: cover;
+    height: 550px;
+
+    align-items: center;  
+}
+
+h1{
+    font-size: 70px;
+}
+
+.text-banner{
+    color: white;
+    padding: 0 0 0 50px  ;
+    text-align: left;
+   
+    
+}
+/* BANNER---------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Catalogo*/
 
 .img-Catalogo {
