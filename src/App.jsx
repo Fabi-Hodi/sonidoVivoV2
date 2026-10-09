@@ -11,7 +11,7 @@ function App() {
     return (
     <BrowserRouter>
       <Routes>
-        <Route path="/Inicio" element={<Inicio />} />
+        <Route path="/" element={<Inicio />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Catalogo" element={<Catalogo />} />
         

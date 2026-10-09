@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
-import { Navbar } from '../../organisms/Navbar/Navbar'
-import { Footer } from '../../organisms/Footer/Footer'
+import  NavBar  from '../organisms/Navbar'
+import  Footer  from '../organisms/Footer'
 
 
 export function PlantillaPublica(props) {
@@ -9,8 +9,7 @@ export function PlantillaPublica(props) {
 
   return (
     <>
-      <Navbar
-        categorias={categorias}
+      <NavBar
         onNavegar={navigate}
         onBuscar={(texto) => navigate(`/buscar/${encodeURIComponent(texto)}`)}
       />
