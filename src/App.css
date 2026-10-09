@@ -1,6 +1,7 @@
 
 body {
-  background-color: #2B1D14; 
+  background-color: #0c0500; 
+  color: #F5EDE0;
 }
 
 .boton-login button {
@@ -9,7 +10,9 @@ body {
   color: #000000 !important;
 }
 
-
+.navbar-fondo{
+  background: #2B1D14
+}
 
 
 .footer {
