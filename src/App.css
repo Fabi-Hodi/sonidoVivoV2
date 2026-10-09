@@ -14,6 +14,17 @@ body {
   background: #2B1D14
 }
 
+.separador{
+    width: 100%;
+    height: 2px;    
+    border: none;
+    background-color: #edb040;
+    margin: auto;
+    background: linear-gradient(to right, transparent, #edb040, transparent);
+    margin: 30px auto; 
+    
+}
+
 
 
 
