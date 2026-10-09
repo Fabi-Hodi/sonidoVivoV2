@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 function Footer() {
     return (
         <footer className="footer">
-        <a href="">Contáctanos</a>
-        <p>© 2026 Sonido Vivo </p>
-        <a href="">Volver Arriba</a>
+        <Link href="#root" className='footer-link'>Contáctanos</Link>
+        <span>© 2026 Sonido Vivo </span>
+        <a href="#root" className='footer-link'>Volver Arriba </a>
     </footer>
     );
 }

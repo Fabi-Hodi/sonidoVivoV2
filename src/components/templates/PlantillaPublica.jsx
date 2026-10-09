@@ -8,15 +8,16 @@ export function PlantillaPublica(props) {
   const navigate = useNavigate()
 
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <NavBar
         onNavegar={navigate}
         onBuscar={(texto) => navigate(`/buscar/${encodeURIComponent(texto)}`)}
       />
-      <main className="contenido">
+
+      <main className="contenido flex-grow-1">
         {props.children}
       </main>
       <Footer onNavegar={navigate} />
-    </>
+    </div>
   )
 }

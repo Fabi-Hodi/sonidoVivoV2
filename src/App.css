@@ -25,7 +25,20 @@ body {
 .footer {
   background: #2B1D14;
   color: white;
-  text-align: center;
   padding: 14px;
   margin-top: 40px;
+
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;  
+  margin: 0 15px;         
+}
+
+.footer-link:hover {
+  color: #ff9900; 
 }
