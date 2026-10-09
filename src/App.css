@@ -15,18 +15,12 @@ body {
 }
 
 
-
-
-
-
-
-
-
 .footer {
   background: #2B1D14;
   color: white;
   padding: 14px;
   margin-top: 40px;
+<<<<<<< HEAD
 
   display: flex;
   justify-content: space-between; 
@@ -42,3 +36,35 @@ body {
 .footer-link:hover {
   color: #ff9900; 
 }
+=======
+}
+
+
+/*Catalogo*/
+
+.img-Catalogo {
+  height: 300px;
+  object-fit: contain;
+}
+
+.borde-catalogo {
+  width: 15rem;
+  background-color: #2B1D14;
+  display: flex;
+  border: 1px solid #edb040;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px 0px 10px 0px;
+}
+
+.titulo-producto {
+  color: #ffffff; 
+}
+
+.precio-producto {
+  color: #ffffff; 
+}
+
+
+
+>>>>>>> 8a47eaf64a14eb36e04ae2aa53526e65c5272279
