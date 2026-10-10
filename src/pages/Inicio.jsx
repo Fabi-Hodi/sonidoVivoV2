@@ -1,5 +1,6 @@
 import { PlantillaPublica } from "../components/templates/PlantillaPublica";
 import Separador from "../components/atoms/Separador";
+import SeccionCategoria from "../components/organisms/SeccionCategoria";
 
 function Inicio(props){
     return(
@@ -13,6 +14,8 @@ function Inicio(props){
                 </div>
             </section>
             <Separador/>
+
+            <SeccionCategoria/>
         </PlantillaPublica>
     );
 }
