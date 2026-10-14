@@ -7,7 +7,7 @@ function NavBar() {
     return (
         <Navbar className='navbar-fondo' data-bs-theme="dark" expand="lg">
             
-            <Container>
+            <Container fluid>
 
                 <Navbar.Brand as={Link} to={"/"} className="d-flex align-items-center">
                     <img
