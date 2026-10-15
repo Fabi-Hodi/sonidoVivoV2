@@ -1,5 +1,5 @@
 import { PlantillaPublica } from "../components/templates/PlantillaPublica";
-
+import Boton from "../components/atoms/Boton";
 
 function Carrito(props){
 
@@ -8,7 +8,7 @@ function Carrito(props){
         <PlantillaPublica>
             <div>
                 <Boton
-                   nombreBoton="Iniciar sesión"
+                   nombreBoton="prueba boton"
                 />
             </div>
             
