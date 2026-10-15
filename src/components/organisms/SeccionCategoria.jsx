@@ -8,6 +8,7 @@ function SeccionCategoria() {
             <Categoria 
                 imagen='/src/assets/guitarra.png'  
                 nombreCategoria="Guitarras"
+                categoria="guitarras"
             />
             
             <Categoria 
@@ -18,6 +19,7 @@ function SeccionCategoria() {
             <Categoria 
                 imagen='/src/assets/bajo.png'
                 nombreCategoria="Bajos"
+                categoria="bajos"
             />
             
             <Categoria 

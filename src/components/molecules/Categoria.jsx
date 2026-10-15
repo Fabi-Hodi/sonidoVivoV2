@@ -1,5 +1,3 @@
-
-
 import { Link } from 'react-router-dom';
 
 function Categoria(props) {
@@ -11,7 +9,7 @@ function Categoria(props) {
             <p>{props.nombreCategoria}</p>
             
             {/* Si a futuro quieres rutas distintas, puedes pasarle props.ruta. Por ahora va a /catalogo */}
-            <Link to="/catalogo" className="enlace-categoria">
+            <Link to={`/catalogo?categoria=${props.categoria}`} className="enlace-categoria">
                 Ver Más
             </Link>
         </div>
