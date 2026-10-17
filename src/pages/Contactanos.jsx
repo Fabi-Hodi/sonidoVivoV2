@@ -6,7 +6,7 @@ function Contactanos(props){
     return(
 
         <PlantillaPublica>
-
+            <div><h1>hola</h1></div>
             
         </PlantillaPublica>
     );
