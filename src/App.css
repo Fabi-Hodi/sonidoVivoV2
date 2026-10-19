@@ -5,9 +5,10 @@ body {
 }
 
 .boton-login button {
-  background-color: #edb040 !important;
-  border-color: #edb040 !important;
-  color: #000000 !important;
+  background-color: #edb040;
+  border-color: #edb040;
+  color: #000000;
+  
 }
 
 .navbar-fondo{
@@ -27,6 +28,53 @@ body {
 
 
 
+/*-----------------------------Inicio de sesion-----------------------------------*/
+.login-card{
+    background-color: transparent;
+    border: 2px solid #edb040;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+
+}
+
+
+.contenedor-login{
+    min-height: 100vh;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    background-image: url('./assets/fondoBanner.png'); /* Imagen de fondo */
+    background-size: cover; /* Cubre todo */
+    background-position: center; /* Centra la imagen */ 
+}
+
+.form-control{
+    width:250px; 
+    background-color: #f5f5f5; 
+
+}
+
+.login-card h1{
+    color: #edb040; 
+    font-size: 3rem; 
+}
+.contenedor-input{
+    display: flex; 
+    justify-content: center; 
+}
+
+.boton-login {
+  display: flex; 
+  justify-content: center; 
+}
+
+.nueva-cuenta {
+    color: #edb040; 
+    text-decoration: none; 
+}
 
 
 
