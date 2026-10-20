@@ -51,10 +51,9 @@ body {
     background-position: center; /* Centra la imagen */ 
 }
 
-.form-control{
-    width:250px; 
-    background-color: #f5f5f5; 
-
+.contenedor-input .form-control{
+    width:250px; /* Solo afecta a Login y Crear Cuenta */
+    background-color: #f5f5f5; /* Color del input */
 }
 
 .login-card h1{
