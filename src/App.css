@@ -1,4 +1,3 @@
-
 body {
   background-color: #0c0500; 
   color: #F5EDE0;
@@ -8,38 +7,31 @@ body {
   background-color: #edb040;
   border-color: #edb040;
   color: #000000;
-  
 }
 
 .navbar-fondo{
-  background: #2B1D14
+  background: #2B1D14;
 }
 
 .separador{
     width: 100%;
-    height: 2px;    
+    height: 0.125rem;    
     border: none;
     background-color: #edb040;
-    margin: auto;
     background: linear-gradient(to right, transparent, #edb040, transparent);
-    margin: 30px auto; 
-    
+    margin: 1.875rem auto; 
 }
-
-
 
 /*-----------------------------Inicio de sesion-----------------------------------*/
 .login-card{
     background-color: transparent;
-    border: 2px solid #edb040;
-    padding: 30px;
-    border-radius: 10px;
+    border: 0.125rem solid #edb040; 
+    padding: 1.875rem; 
+    border-radius: 0.625rem;
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-
 }
-
 
 .contenedor-login{
     min-height: 100vh;
@@ -49,7 +41,7 @@ body {
 }
 
 .contenedor-input .form-control{
-    width:250px; /* Solo afecta a Login y Crear Cuenta */
+    width: 15.625rem; 
     background-color: #f5f5f5; /* Color del input */
 }
 
@@ -57,6 +49,7 @@ body {
     color: #edb040; 
     font-size: 3rem; 
 }
+
 .contenedor-input{
     display: flex; 
     justify-content: center; 
@@ -72,43 +65,54 @@ body {
     text-decoration: none; 
 }
 
-
-
-
-
-
-
-
 /* BANNER---------------------------------------------------- */
 .banner{
     display: flex;
     background-image: url('/src/assets/fondoBanner.png');
     background-size: cover;
-    height: 550px;
-
+    height: 34.375rem; 
     align-items: center;  
 }
 
 h1{
-    font-size: 70px;
+    font-size: 4.375rem; 
 }
 
 .text-banner{
     color: white;
-    padding: 0 0 0 50px  ;
+    padding: 0 0 0 3.125rem; 
     text-align: left;
-   
-    
 }
 /* BANNER---------------------------------------------------- */
+
+/* NO ENCONTRADO---------------------------------------------------- */
+.no-banner{
+    display: flex;
+    background-image: url('/src/assets/noEncontrado.png');
+    background-size: cover;
+    height: 40rem;
+    align-items: center;  
+}
+
+.no-banner h1{
+    font-size: 4rem;
+}
+
+.no-banner .text-banner{
+    color: white;
+    padding: 0 0 0 3.125rem; 
+    text-align: left;
+    margin-bottom: 7rem;
+}
+/* NO ENCONTRADO---------------------------------------------------- */
 
 #section-categoria {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px; 
-    padding: 20px;
+    gap: 0.9375rem; 
+    padding: 1.25rem; 
 }
 
 .categoria-card {
@@ -117,10 +121,10 @@ h1{
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 120px;
-    height: 120px;
-    padding: 10px 0px;
-    border-radius: 10px;
+    width: 7.5rem; 
+    height: 7.5rem;
+    padding: 0.625rem 0; 
+    border-radius: 0.625rem; 
     background-size: cover;
     background-position: center;
     transition: transform 0.3s ease;
@@ -133,10 +137,10 @@ h1{
 }
 
 .categoria-card p {
-    margin: 5px 0;
+    margin: 0.3125rem 0; 
     font-weight: bold;
     color: white; 
-    min-height: 40px;
+    min-height: 2.5rem; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,22 +153,10 @@ h1{
     font-size: 0.9rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*Catalogo*/
 
 .img-Catalogo {
-  height: 300px;
+  height: 18.75rem; 
   object-fit: contain;
 }
 
@@ -172,10 +164,10 @@ h1{
   width: 15rem;
   background-color: #2B1D14;
   display: flex;
-  border: 1px solid #edb040;
-  border-radius: 20px;
-  margin: 10px;
-  padding: 10px 0px 10px 0px;
+  border: 0.0625rem solid #edb040; 
+  border-radius: 1.25rem; 
+  margin: 0.625rem; 
+  padding: 0.625rem 0; 
 }
 
 .titulo-producto {
@@ -186,71 +178,21 @@ h1{
   color: #ffffff; 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* CARRITO---------------------------------------------------- */
-
 
 .container-carrito{
   width: 100rem;
-  border: solid 1px #edb040;
-  border-radius: 10;
+  border: 0.0625rem solid #edb040; 
+  border-radius: 0.625rem; 
 }
 
-
 /* CARRITO---------------------------------------------------- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .footer {
   background: #2B1D14;
   color: white;
-  padding: 14px;
-  margin-top: 40px;
-
+  padding: 0.875rem; 
+  margin-top: 2.5rem; 
   display: flex;
   justify-content: space-between; 
   align-items: center;
@@ -259,7 +201,7 @@ h1{
 .footer-link {
   color: white;
   text-decoration: none;  
-  margin: 0 15px;         
+  margin: 0 0.9375rem; 
 }
 
 .footer-link:hover {
