@@ -46,9 +46,6 @@ body {
     display: flex; 
     justify-content: center; 
     align-items: center;
-    background-image: url('./assets/fondoBanner.png'); /* Imagen de fondo */
-    background-size: cover; /* Cubre todo */
-    background-position: center; /* Centra la imagen */ 
 }
 
 .contenedor-input .form-control{
@@ -267,4 +264,16 @@ h1{
 
 .footer-link:hover {
   color: #ff9900; 
+}
+
+
+
+/*-------------------------------------------------Catalogo----------------------------------------------*/
+.guitarra{
+    transition: transform 0.3s ease;
+}
+
+    
+.guitarra:hover {
+    transform: scale(1.1); 
 }

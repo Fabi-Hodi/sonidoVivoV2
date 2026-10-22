@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
 import EticketaStock from '../atoms/EticketaStock';
 import Precio from '../atoms/Precio';
 
 function TarjetaProducto(props){
     return(
+        <Link to="/detalles" className="text-decoration-none">
         <div className="card borde-catalogo">
             <img src={props.imagen} className="card-img-top p-2 img-Catalogo" alt={props.nombre || "Producto"} />
 
@@ -19,6 +21,7 @@ function TarjetaProducto(props){
             </div>
             </div>
         </div>
+        </Link>
     );
 }
 

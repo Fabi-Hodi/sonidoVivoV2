@@ -31,7 +31,7 @@ function CatalogoProductos() {
                 {/* Guitarra 1 */}
                 {"Guitarra Acústica Folk".toLowerCase().includes(busqueda.toLowerCase()) && 
                     (!categoriaSeleccionada || categoriaSeleccionada === "guitarras") && (
-                    <Col md={4} className="d-flex justify-content-center">
+                    <Col md={4} className="d-flex justify-content-center guitarra">
                         <TarjetaProducto
                             nombre="Guitarra Acústica Folk"
                             imagen="img/guitarras/GA1.png"
