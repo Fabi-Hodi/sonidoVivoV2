@@ -11,6 +11,7 @@ function FormularioContacto(props){
                     placeholder='Ingrese su nombre completo'
                     valor={props.nombre}
                     onChange={props.onNombreChange}
+                    required
                 />
             </div>
 
@@ -21,6 +22,7 @@ function FormularioContacto(props){
                     placeholder='Ingrese su correo electronico'
                     valor={props.correo}
                     onChange={props.onCorreoChange}
+                    required
                 />
             </div>
 
@@ -41,6 +43,7 @@ function FormularioContacto(props){
                     className='form-select'
                     value={props.motivo}
                     onChange={props.onMotivoChange}
+                    required
                 
                 >
                     <option value="">
@@ -77,6 +80,7 @@ function FormularioContacto(props){
                     value={props.mensaje}
                     onChange={props.onMensajeChange}
                     rows="5"
+                    required
                 />
 
             </div>

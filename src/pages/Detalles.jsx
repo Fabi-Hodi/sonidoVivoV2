@@ -1,6 +1,7 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import productos from '../data/productos.json';
 import { PlantillaPublica } from "../components/templates/PlantillaPublica";
+
 
 function Detalles(){
 
@@ -25,6 +26,12 @@ function Detalles(){
             <p>Stock: {producto.stock}</p>
 
             <p>{producto.descripcion}</p>
+
+            <Link to="/carrito">
+            <button>
+                Agregar al carrito
+            </button>
+            </Link>
 
         </PlantillaPublica>
 

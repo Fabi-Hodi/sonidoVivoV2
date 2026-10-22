@@ -29,11 +29,14 @@ function CatalogoProductos() {
             {/* Listado de productos */}
             <Row className="justify-content-center g-4">
                 {productos
-                    .filter((producto) =>
-                        producto.nombre
-                            .toLowerCase()
-                            .includes(busqueda.toLowerCase())
+                    .filter((producto) => producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
+
+                    &&
+
+                    (
+                        !categoriaSeleccionada || producto.categoria === categoriaSeleccionada
                     )
+                )
                     .map((producto) => (
                         <Col
                             md={4}

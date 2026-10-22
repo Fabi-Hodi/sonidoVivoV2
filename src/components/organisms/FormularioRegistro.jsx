@@ -13,6 +13,7 @@ function FormularioRegistro(props) {
                     placeholder="Ingrese su nombre completo"
                     valor={props.nombreCompleto}
                     onChange={props.onNombreCompletoChange}
+                    required
                 />
             </div>
 
@@ -23,6 +24,7 @@ function FormularioRegistro(props) {
                     tipo="date"
                     valor={props.fechaNacimiento}
                     onChange={props.onFechaNacimientoChange}
+                    required
                 />
             </div>
 
@@ -34,6 +36,7 @@ function FormularioRegistro(props) {
                     placeholder="Ingrese su correo"
                     valor={props.correo}
                     onChange={props.onCorreoChange}
+                    required
                 />
             </div>
 
@@ -45,6 +48,7 @@ function FormularioRegistro(props) {
                     placeholder="Ingrese su contraseña"
                     valor={props.password}
                     onChange={props.onPasswordChange}
+                    required
                 />
             </div>
 

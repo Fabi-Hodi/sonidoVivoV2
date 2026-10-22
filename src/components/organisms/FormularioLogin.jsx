@@ -12,6 +12,7 @@ function FormularioLogin(props) {
                 placeholder="Ingrese su correo"
                 valor={props.correo}
                 onChange={props.onCorreoChange}
+                required
             />
         </div>
         
@@ -23,6 +24,7 @@ function FormularioLogin(props) {
                 placeholder="Ingrese su contraseña"
                 valor={props.password}
                 onChange={props.onPasswordChange}
+                required
             />
         </div>
 
