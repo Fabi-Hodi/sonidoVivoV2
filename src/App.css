@@ -171,7 +171,6 @@ h1{
   border-radius: 1.25rem; 
   margin: 0.625rem; 
   padding: 0.625rem 0; 
-  height: 500px;
 }
 
 .borde-catalogo:hover{
@@ -181,7 +180,10 @@ h1{
 
 .titulo-producto {
   color: #ffffff; 
+<<<<<<< HEAD
   min-height: 3.75rem;
+=======
+>>>>>>> 6cba3f196c2e950b976be6fe7f3f94742d7da877
 }
 
 .precio-producto {
