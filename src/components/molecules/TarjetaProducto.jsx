@@ -4,7 +4,7 @@ import Precio from '../atoms/Precio';
 
 function TarjetaProducto(props){
     return(
-        <Link to="/detalles" className="text-decoration-none">
+        <Link to={`/detalles/${props.nombre}`} className="text-decoration-none">
         <div className="card borde-catalogo">
             <img src={props.imagen} className="card-img-top p-2 img-Catalogo" alt={props.nombre || "Producto"} />
 
@@ -13,6 +13,7 @@ function TarjetaProducto(props){
 
                 <EticketaStock
                     disponible={props.disponible}
+                    stock={props.stock}
                 />
             <div className="precio-producto">
                 <Precio

@@ -1,17 +1,14 @@
-import { PlantillaPublica } from "../components/templates/PlantillaPublica";
+import { useParams } from 'react-router-dom';
 
 function Detalles(){
 
+    const { nombre } = useParams(); 
+
     return(
-
-        <PlantillaPublica>
-
-            <h1>Detalles del Producto</h1>
-
-        </PlantillaPublica>
-
+        <div>
+            <h1>{nombre}</h1>
+        </div>
     );
-
 }
 
 export default Detalles;
