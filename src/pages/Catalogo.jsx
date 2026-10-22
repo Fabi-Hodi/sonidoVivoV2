@@ -1,4 +1,3 @@
-import NavBar from '../components/organisms/Navbar';
 import CatalogoProductos from '../components/organisms/CatalogoProductos';
 import { PlantillaPublica } from "../components/templates/PlantillaPublica";
 

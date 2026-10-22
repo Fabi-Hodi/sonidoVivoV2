@@ -5,6 +5,7 @@ import Catalogo from "./pages/Catalogo";
 import CrearCuenta from "./pages/CrearCuenta";
 import Carrito from "./pages/Carrito";
 import Contactanos from "./pages/Contactanos";
+import NoEncontrado from "./pages/noEncontrado";
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/catalogo" element={<Catalogo />} />
         <Route path="/carrito" element={<Carrito />} />
         <Route path="/contactanos" element={<Contactanos />} />
+        <Route path="/noencontrado" element={<NoEncontrado />} />
 
         
       </Routes>
