@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import TarjetaProducto from '../molecules/TarjetaProducto';
 import productos from '../../data/productos.json';
+import Separador from '../atoms/Separador';
 
 function CatalogoProductos() {
     const [busqueda, setBusqueda] = useState('');
@@ -24,15 +25,14 @@ function CatalogoProductos() {
                         onChange={(e) => setBusqueda(e.target.value)}
                     />
                 </Col>
+                <Separador/>
             </Row>
 
             {/* Listado de productos */}
             <Row className="justify-content-center g-4">
                 {productos
                     .filter((producto) => producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
-
                     &&
-
                     (
                         !categoriaSeleccionada || producto.categoria === categoriaSeleccionada
                     )
@@ -45,7 +45,8 @@ function CatalogoProductos() {
                         >
                             <TarjetaProducto
                                 nombre={producto.nombre}
-                                imagen="img/guitarras/GA1.png"
+                                // Ahora lee la imagen directamente del JSON
+                                imagen={producto.imagen} 
                                 valor={producto.precio}
                                 disponible={producto.stock > 0}
                                 stock={producto.stock}
@@ -54,9 +55,8 @@ function CatalogoProductos() {
                         </Col>
                     ))}
             </Row>
-
-            
         </Container>
     );
 }
+
 export default CatalogoProductos;

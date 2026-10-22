@@ -7,7 +7,8 @@
     "modelo": "F310",
     "stock": 8,
     "precio": 129990,
-    "descripcion": "Tapa de abeto, aros y fondo de meranti. Ideal para iniciantes."
+    "descripcion": "Tapa de abeto, aros y fondo de meranti. Ideal para iniciantes.",
+    "imagen": "/img/guitarras/GA1.png"
   },
   {
     "codigo": "GA002",
@@ -17,7 +18,8 @@
     "modelo": "CD-60S",
     "stock": 5,
     "precio": 189990,
-    "descripcion": "Tapa de abeto macizo, brazo de caoba. Sonido cálido y proyectado."
+    "descripcion": "Tapa de abeto macizo, brazo de caoba. Sonido cálido y proyectado.",
+    "imagen": "/img/guitarras/GA2.png"
   },
   {
     "codigo": "GA003",
@@ -27,7 +29,8 @@
     "modelo": "C40",
     "stock": 10,
     "precio": 89990,
-    "descripcion": "Nailon, tapa de abeto. Ideal para estudio y flamenco."
+    "descripcion": "Nailon, tapa de abeto. Ideal para estudio y flamenco.",
+    "imagen": "/img/guitarras/GA3.png"
   },
   {
     "codigo": "GA004",
@@ -37,7 +40,8 @@
     "modelo": "GN20CE",
     "stock": 3,
     "precio": 349990,
-    "descripcion": "Pickup integrado, afinador incorporado."
+    "descripcion": "Pickup integrado, afinador incorporado.",
+    "imagen": "/img/guitarras/GA1.png"
   },
   {
     "codigo": "GA005",
@@ -47,7 +51,8 @@
     "modelo": "JR1",
     "stock": 6,
     "precio": 79990,
-    "descripcion": "Tamaño reducido para niños de 6 a 10 años."
+    "descripcion": "Tamaño reducido para niños de 6 a 10 años.",
+    "imagen": "/img/guitarras/GA2.png"
   },
   {
     "codigo": "GE001",
@@ -57,7 +62,8 @@
     "modelo": "Affinity Strat",
     "stock": 5,
     "precio": 249990,
-    "descripcion": "Cuerpo de álamo, mástil de arce, pastillas SSS."
+    "descripcion": "Cuerpo de álamo, mástil de arce, pastillas SSS.",
+    "imagen": "/img/guitarrasElec/GE3.png"
   },
   {
     "codigo": "GE002",
@@ -67,7 +73,8 @@
     "modelo": "Les Paul Std",
     "stock": 4,
     "precio": 329990,
-    "descripcion": "Cuerpo caoba, tapa arce, pastillas humbucker."
+    "descripcion": "Cuerpo caoba, tapa arce, pastillas humbucker.",
+    "imagen": "/img/guitarrasElec/GE3.png"
   },
   {
     "codigo": "GE003",
@@ -77,7 +84,8 @@
     "modelo": "SG Standard",
     "stock": 3,
     "precio": 319990,
-    "descripcion": "Cuerpo caoba, mástil caoba, 2 humbuckers."
+    "descripcion": "Cuerpo caoba, mástil caoba, 2 humbuckers.",
+    "imagen": "/img/guitarrasElec/GE3.png"
   },
   {
     "codigo": "GE004",
@@ -87,7 +95,8 @@
     "modelo": "Affinity Tele",
     "stock": 4,
     "precio": 239990,
-    "descripcion": "Cuerpo álamo, clavijero vintage, 2 pastillas single."
+    "descripcion": "Cuerpo álamo, clavijero vintage, 2 pastillas single.",
+    "imagen": "/img/guitarrasElec/GE3.png"
   },
   {
     "codigo": "GE005",
@@ -97,7 +106,8 @@
     "modelo": "ES-335",
     "stock": 2,
     "precio": 549990,
-    "descripcion": "Semi-hueca, 2 humbuckers, ideal para jazz y blues."
+    "descripcion": "Semi-hueca, 2 humbuckers, ideal para jazz y blues.",
+    "imagen": "/img/guitarrasElec/GE3.png"
   },
   {
     "codigo": "BA001",
@@ -107,7 +117,8 @@
     "modelo": "Affinity PJ",
     "stock": 5,
     "precio": 299990,
-    "descripcion": "Pickup PJ, cuerpo álamo, mástil arce."
+    "descripcion": "Pickup PJ, cuerpo álamo, mástil arce.",
+    "imagen": "/img/bajos/B1.png"
   },
   {
     "codigo": "BA002",
@@ -117,7 +128,8 @@
     "modelo": "Player Jazz",
     "stock": 2,
     "precio": 699990,
-    "descripcion": "Alder body, 2 Alnico V Jazz single-coil."
+    "descripcion": "Alder body, 2 Alnico V Jazz single-coil.",
+    "imagen": "/img/bajos/B2.png"
   },
   {
     "codigo": "BA003",
@@ -127,7 +139,8 @@
     "modelo": "APX700II",
     "stock": 2,
     "precio": 429990,
-    "descripcion": "Electroacústico, afinador incorporado."
+    "descripcion": "Electroacústico, afinador incorporado.",
+    "imagen": "/img/bajos/B3.png"
   },
   {
     "codigo": "BT001",
@@ -137,7 +150,8 @@
     "modelo": "Roadshow",
     "stock": 2,
     "precio": 599990,
-    "descripcion": "Incluye stands, platillos y pedal de bombo."
+    "descripcion": "Incluye stands, platillos y pedal de bombo.",
+    "imagen": "/img/baterias/BA1.png"
   },
   {
     "codigo": "BT002",
@@ -147,7 +161,8 @@
     "modelo": "TD-02KV",
     "stock": 2,
     "precio": 799990,
-    "descripcion": "Módulo TD-02, 8 pads de goma, pedal hi-hat."
+    "descripcion": "Módulo TD-02, 8 pads de goma, pedal hi-hat.",
+    "imagen": "/img/baterias/BA1.png"
   },
   {
     "codigo": "BT003",
@@ -157,7 +172,8 @@
     "modelo": "STE1450",
     "stock": 4,
     "precio": 89990,
-    "descripcion": "Acero, 14x5\", 10 tensores."
+    "descripcion": "Acero, 14x5\", 10 tensores.",
+    "imagen": "/img/baterias/BA1.png"
   },
   {
     "codigo": "BT004",
@@ -167,7 +183,8 @@
     "modelo": "A Series",
     "stock": 3,
     "precio": 149990,
-    "descripcion": "Latón B20, sonido brillante y claro."
+    "descripcion": "Latón B20, sonido brillante y claro.",
+    "imagen": "/img/baterias/BA1.png"
   },
   {
     "codigo": "BT005",
@@ -177,7 +194,8 @@
     "modelo": "A Series",
     "stock": 3,
     "precio": 129990,
-    "descripcion": "Latón B20, ataque rápido."
+    "descripcion": "Latón B20, ataque rápido.",
+    "imagen": "/img/baterias/BA1.png"
   },
   {
     "codigo": "TC001",
@@ -187,7 +205,8 @@
     "modelo": "PSR-E373",
     "stock": 4,
     "precio": 249990,
-    "descripcion": "61 teclas sensibles al tacto, 622 voces."
+    "descripcion": "61 teclas sensibles al tacto, 622 voces.",
+    "imagen": "/img/pianos/P1.png"
   },
   {
     "codigo": "TC002",
@@ -197,7 +216,8 @@
     "modelo": "P-45",
     "stock": 2,
     "precio": 499990,
-    "descripcion": "88 teclas pesadas, 10 voces, pedal sustain incluido."
+    "descripcion": "88 teclas pesadas, 10 voces, pedal sustain incluido.",
+    "imagen": "/img/pianos/P1.png"
   },
   {
     "codigo": "TC003",
@@ -207,7 +227,8 @@
     "modelo": "MiniLab MKII",
     "stock": 5,
     "precio": 129990,
-    "descripcion": "MIDI controller, 49 mini teclas."
+    "descripcion": "MIDI controller, 49 mini teclas.",
+    "imagen": "/img/pianos/P1.png"
   },
   {
     "codigo": "TC004",
@@ -217,7 +238,8 @@
     "modelo": "Hammer 88",
     "stock": 2,
     "precio": 399990,
-    "descripcion": "88 teclas martillo, sin sonidos propios."
+    "descripcion": "88 teclas martillo, sin sonidos propios.",
+    "imagen": "/img/pianos/P1.png"
   },
   {
     "codigo": "AM001",
@@ -227,7 +249,8 @@
     "modelo": "Frontman 15G",
     "stock": 5,
     "precio": 99990,
-    "descripcion": "15W, distorsión incorporada, entrada auxiliar."
+    "descripcion": "15W, distorsión incorporada, entrada auxiliar.",
+    "imagen": "/img/amplificadores/AM1.png"
   },
   {
     "codigo": "AM002",
@@ -237,7 +260,8 @@
     "modelo": "MG40GFX",
     "stock": 3,
     "precio": 299990,
-    "descripcion": "40W, 4 canales, efectos digitales integrados."
+    "descripcion": "40W, 4 canales, efectos digitales integrados.",
+    "imagen": "/img/amplificadores/AM1.png"
   },
   {
     "codigo": "AM003",
@@ -247,7 +271,8 @@
     "modelo": "HD100",
     "stock": 2,
     "precio": 449990,
-    "descripcion": "100W, tweeter integrado, ecualizador de 4 bandas."
+    "descripcion": "100W, tweeter integrado, ecualizador de 4 bandas.",
+    "imagen": "/img/amplificadores/AM1.png"
   },
   {
     "codigo": "AM004",
@@ -257,7 +282,8 @@
     "modelo": "Loudbox Mini",
     "stock": 2,
     "precio": 499990,
-    "descripcion": "60W, 2 canales, reverb y chorus incorporados."
+    "descripcion": "60W, 2 canales, reverb y chorus incorporados.",
+    "imagen": "/img/amplificadores/AM1.png"
   },
   {
     "codigo": "MI001",
@@ -267,7 +293,8 @@
     "modelo": "SM58",
     "stock": 8,
     "precio": 149990,
-    "descripcion": "Estándar industria para voz en vivo."
+    "descripcion": "Estándar industria para voz en vivo.",
+    "imagen": "/img/microfonos/M3.png"
   },
   {
     "codigo": "MI002",
@@ -277,7 +304,8 @@
     "modelo": "SM57",
     "stock": 6,
     "precio": 139990,
-    "descripcion": "Ideal para captura de instrumentos y amplificadores."
+    "descripcion": "Ideal para captura de instrumentos y amplificadores.",
+    "imagen": "/img/microfonos/M3.png"
   },
   {
     "codigo": "MI003",
@@ -287,7 +315,8 @@
     "modelo": "AT2020",
     "stock": 4,
     "precio": 199990,
-    "descripcion": "Cardioide, XLR, ideal para grabación en estudio."
+    "descripcion": "Cardioide, XLR, ideal para grabación en estudio.",
+    "imagen": "/img/microfonos/M3.png"
   },
   {
     "codigo": "MI004",
@@ -297,7 +326,8 @@
     "modelo": "Yeti",
     "stock": 5,
     "precio": 299990,
-    "descripcion": "USB, 4 patrones polares, ideal para streaming y podcast."
+    "descripcion": "USB, 4 patrones polares, ideal para streaming y podcast.",
+    "imagen": "/img/microfonos/M3.png"
   },
   {
     "codigo": "PE001",
@@ -307,7 +337,8 @@
     "modelo": "DS-1",
     "stock": 7,
     "precio": 79990,
-    "descripcion": "Clásico pedal de distorsión, 3 controles."
+    "descripcion": "Clásico pedal de distorsión, 3 controles.",
+    "imagen": "/img/pedales/PE1.png"
   },
   {
     "codigo": "PE002",
@@ -317,7 +348,8 @@
     "modelo": "RV-6",
     "stock": 4,
     "precio": 179990,
-    "descripcion": "8 modos de reverb, control de shimmer."
+    "descripcion": "8 modos de reverb, control de shimmer.",
+    "imagen": "/img/pedales/PE1.png"
   },
   {
     "codigo": "PE003",
@@ -327,7 +359,8 @@
     "modelo": "ME-80",
     "stock": 2,
     "precio": 349990,
-    "descripcion": "Diseño tipo pedalboard, 8 efectos simultáneos."
+    "descripcion": "Diseño tipo pedalboard, 8 efectos simultáneos.",
+    "imagen": "/img/pedales/PE1.png"
   },
   {
     "codigo": "PE004",
@@ -337,7 +370,8 @@
     "modelo": "TU-3",
     "stock": 8,
     "precio": 89990,
-    "descripcion": "Afinador cromático, indicador de tono."
+    "descripcion": "Afinador cromático, indicador de tono.",
+    "imagen": "/img/pedales/PE1.png"
   },
   {
     "codigo": "PE005",
@@ -347,7 +381,8 @@
     "modelo": "Carbon Copy",
     "stock": 4,
     "precio": 179990,
-    "descripcion": "Delay analógico cálido, tiempo 600ms."
+    "descripcion": "Delay analógico cálido, tiempo 600ms.",
+    "imagen": "/img/pedales/PE1.png"
   },
   {
     "codigo": "PE006",
@@ -357,7 +392,8 @@
     "modelo": "TS9",
     "stock": 6,
     "precio": 99990,
-    "descripcion": "Tube Screamer clásico, sonido suave y orgánico."
+    "descripcion": "Tube Screamer clásico, sonido suave y orgánico.",
+    "imagen": "/img/pedales/PE1.png"
   },
   {
     "codigo": "AC001",
@@ -367,7 +403,8 @@
     "modelo": "Super Slinky",
     "stock": 25,
     "precio": 8990,
-    "descripcion": "Juego 6 cuerdas, calibre ligero."
+    "descripcion": "Juego 6 cuerdas, calibre ligero.",
+    "imagen": "/img/accesorios/A1.png"
   },
   {
     "codigo": "AC002",
@@ -377,7 +414,8 @@
     "modelo": "Earthwood",
     "stock": 20,
     "precio": 10990,
-    "descripcion": "Bronce fósforo, sonido cálido."
+    "descripcion": "Bronce fósforo, sonido cálido.",
+    "imagen": "/img/accesorios/A1.png"
   },
   {
     "codigo": "AC003",
@@ -387,7 +425,8 @@
     "modelo": "Regular Slinky",
     "stock": 12,
     "precio": 14990,
-    "descripcion": "Cuerdas de níquel enrollado, set 4 cuerdas."
+    "descripcion": "Cuerdas de níquel enrollado, set 4 cuerdas.",
+    "imagen": "/img/accesorios/A1.png"
   },
   {
     "codigo": "AC004",
@@ -397,7 +436,8 @@
     "modelo": "351",
     "stock": 50,
     "precio": 3990,
-    "descripcion": "Celulosa, grosor medio."
+    "descripcion": "Celulosa, grosor medio.",
+    "imagen": "/img/accesorios/A1.png"
   },
   {
     "codigo": "AC005",
@@ -407,7 +447,8 @@
     "modelo": "Trigger",
     "stock": 15,
     "precio": 12990,
-    "descripcion": "Capotraste de resorte, compatible 6 cuerdas."
+    "descripcion": "Capotraste de resorte, compatible 6 cuerdas.",
+    "imagen": "/img/accesorios/A1.png"
   },
   {
     "codigo": "AC006",
@@ -417,7 +458,8 @@
     "modelo": "SN-5",
     "stock": 20,
     "precio": 8990,
-    "descripcion": "Afinador cromático de clip, pantalla giratoria."
+    "descripcion": "Afinador cromático de clip, pantalla giratoria.",
+    "imagen": "/img/accesorios/A1.png"
   },
   {
     "codigo": "AC007",
@@ -427,7 +469,8 @@
     "modelo": "S100-I-3",
     "stock": 15,
     "precio": 12990,
-    "descripcion": "Cable trenzado, conectores dorados, 3 metros."
+    "descripcion": "Cable trenzado, conectores dorados, 3 metros.",
+    "imagen": "/img/accesorios/A1.png"
   },
   {
     "codigo": "AC008",
@@ -437,7 +480,8 @@
     "modelo": "S100-I-6",
     "stock": 10,
     "precio": 17990,
-    "descripcion": "Cable trenzado, conectores dorados, 6 metros."
+    "descripcion": "Cable trenzado, conectores dorados, 6 metros.",
+    "imagen": "/img/accesorios/A1.png"
   },
   {
     "codigo": "AC009",
@@ -447,7 +491,8 @@
     "modelo": "GS302B",
     "stock": 12,
     "precio": 22990,
-    "descripcion": "Soporte plegable con enganche automático."
+    "descripcion": "Soporte plegable con enganche automático.",
+    "imagen": "/img/accesorios/A1.png"
   },
   {
     "codigo": "AC010",
@@ -457,7 +502,8 @@
     "modelo": "WAH-202",
     "stock": 10,
     "precio": 18990,
-    "descripcion": "Montaje a pared, enganche automático."
+    "descripcion": "Montaje a pared, enganche automático.",
+    "imagen": "/img/accesorios/A1.png"
   },
   {
     "codigo": "ES001",
@@ -467,7 +513,8 @@
     "modelo": "Scarlett Solo",
     "stock": 4,
     "precio": 149990,
-    "descripcion": "1 entrada XLR+instrumento, 2 salidas, 24bit/192kHz."
+    "descripcion": "1 entrada XLR+instrumento, 2 salidas, 24bit/192kHz.",
+    "imagen": "/img/estudioGrabacion/EA1.png"
   },
   {
     "codigo": "ES002",
@@ -477,7 +524,8 @@
     "modelo": "ATH-M20x",
     "stock": 6,
     "precio": 79990,
-    "descripcion": "Circumaurales, respuesta 15Hz-20kHz."
+    "descripcion": "Circumaurales, respuesta 15Hz-20kHz.",
+    "imagen": "/img/estudioGrabacion/EA1.png"
   },
   {
     "codigo": "ES003",
@@ -487,7 +535,8 @@
     "modelo": "ATH-M50x",
     "stock": 4,
     "precio": 219990,
-    "descripcion": "Referencia de industria, sonido neutro y detallado."
+    "descripcion": "Referencia de industria, sonido neutro y detallado.",
+    "imagen": "/img/estudioGrabacion/EA1.png"
   },
   {
     "codigo": "ES004",
@@ -497,7 +546,8 @@
     "modelo": "HS5",
     "stock": 2,
     "precio": 349990,
-    "descripcion": "Altavoz activo, respuesta plana, ideal mezcla."
+    "descripcion": "Altavoz activo, respuesta plana, ideal mezcla.",
+    "imagen": "/img/estudioGrabacion/EA1.png"
   },
   {
     "codigo": "ES005",
@@ -507,6 +557,7 @@
     "modelo": "MZP 40",
     "stock": 8,
     "precio": 14990,
-    "descripcion": "Doble malla, brazo flexible con clip."
+    "descripcion": "Doble malla, brazo flexible con clip.",
+    "imagen": "/img/estudioGrabacion/EA1.png"
   }
 ]

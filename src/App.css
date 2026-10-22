@@ -223,3 +223,35 @@ h1{
   padding: 1rem;
 }
 
+
+
+/* --- ESTILOS DEL CATÁLOGO --- */
+.tarjeta-producto {
+    width: 18rem;
+}
+
+.texto-categoria {
+    font-size: 0.85rem;
+}
+
+.contenedor-imagen-catalogo {
+    height: 220px;
+    background-color: white;
+}
+
+.imagen-catalogo {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* --- ESTILOS DEL CARRITO --- */
+.contenedor-imagen-carrito {
+    min-height: 160px;
+}
+
+.imagen-carrito {
+    height: 140px;
+    width: 100%;
+    object-fit: contain;
+}

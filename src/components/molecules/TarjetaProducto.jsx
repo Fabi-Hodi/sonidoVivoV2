@@ -1,30 +1,42 @@
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import EticketaStock from '../atoms/EticketaStock';
-import Precio from '../atoms/Precio';
 
-function TarjetaProducto(props){
-    return(
-        <Link to={`/detalles/${props.nombre}`} className="text-decoration-none">
-        <div className="card borde-catalogo">
-            <img src={props.imagen} className="card-img-top p-2 img-Catalogo" alt={props.nombre || "Producto"} />
-
-            <div className="card-body">
-                <h5 className="card-title titulo-producto">{props.nombre}</h5>
-
-                <EticketaStock
-                    disponible={props.disponible}
-                    stock={props.stock}
+function TarjetaProducto(props) {
+    return (
+        <Card className="tarjeta-producto h-100 bg-dark text-white border-secondary shadow">
+            
+            <div className="contenedor-imagen-catalogo p-3 rounded-top d-flex justify-content-center align-items-center">
+                <Card.Img 
+                    variant="top" 
+                    src={props.imagen} 
+                    alt={props.nombre} 
+                    className="imagen-catalogo"
                 />
-            <div className="precio-producto">
-                <Precio
-                    valor={props.valor}
-                   
-                />
-                 
             </div>
-            </div>
-        </div>
-        </Link>
+            
+            <Card.Body className="d-flex flex-column">
+                <Card.Text className="texto-categoria text-secondary mb-1">
+                    {props.categoria}
+                </Card.Text>
+                
+                <Card.Title className="fs-5 mb-3">{props.nombre}</Card.Title>
+                
+                <Card.Text className="text-warning fw-bold fs-4 mb-2">
+                    ${props.valor}
+                </Card.Text>
+                
+                <Card.Text className={props.disponible ? "text-success mb-4" : "text-danger mb-4"}>
+                    {props.disponible ? `Stock disponible: ${props.stock}` : "Agotado"}
+                </Card.Text>
+                
+                <Link to={`/detalles/${props.nombre}`} className="mt-auto text-decoration-none">
+                    <Button variant="outline-light" className="w-100 fw-bold">
+                        Ver Detalles
+                    </Button>
+                </Link>
+            </Card.Body>
+        </Card>
     );
 }
 

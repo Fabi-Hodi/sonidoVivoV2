@@ -11,11 +11,11 @@ import ItemCarrito from "../components/molecules/ItemCarrito";
 import ResumenCarrito from "../components/organisms/ResumenCarrito";
 
 function Carrito(props){
-    // 2. Nos conectamos a la nube y bajamos la lista de productos
+    //nos conectamos al context y bajamos la lista de productos
     const { carrito } = useContext(CartContext);
 
-    // 3. (Opcional pero útil) Calculamos el total matemático para enviarlo al resumen
-    const totalPagar = carrito.reduce((suma, producto) => suma + producto.precio, 0);
+    //calculamos el total para enviarlo al resumen
+    const totalPagar = carrito.reduce((suma, producto) => suma + (producto.precio * producto.cantidad), 0);
 
     return(
         <PlantillaPublica>
@@ -27,16 +27,18 @@ function Carrito(props){
                     <Col md={7} className="bg-dark border border-secondary rounded p-4">
                         <h4 className="text-white mb-4">Productos Agregados</h4>
                         
-                        {/* 4. Dibujamos dinámicamente cada producto del carrito */}
+                        {/*dibujamos cada producto del carrito */}
                         {carrito.length === 0 ? (
                             <p className="text-white">Tu carrito está vacío.</p>
                         ) : (
                             carrito.map((producto) => (
                                 <ItemCarrito 
                                     key={producto.id}
+                                    id={producto.id}
                                     nombre={producto.nombre}
                                     precio={producto.precio}
                                     imagen={producto.imagen}
+                                    cantidad={producto.cantidad}
                                 />
                             ))
                         )}
@@ -50,7 +52,7 @@ function Carrito(props){
                     </Col>                
 
                     <Col md={4}>
-                        {/* 5. Le inyectamos el total calculado al cuadro de resumen */}
+                        {/*mostramos el total calculado en el cuadro resumen */}
                         <ResumenCarrito total={totalPagar} />
                     </Col>
                     
