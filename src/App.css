@@ -106,6 +106,8 @@ h1{
 }
 /* NO ENCONTRADO---------------------------------------------------- */
 
+
+/*CATEGORIA---------------------------------------------------- */
 #section-categoria {
     display: flex;
     flex-direction: row;
@@ -152,6 +154,7 @@ h1{
     text-decoration: underline;
     font-size: 0.9rem;
 }
+/*CATEGORIA---------------------------------------------------- */
 
 /*Catalogo*/
 
@@ -168,6 +171,11 @@ h1{
   border-radius: 1.25rem; 
   margin: 0.625rem; 
   padding: 0.625rem 0; 
+}
+
+.borde-catalogo:hover{
+  transition: transform 0.3s ease;
+  transform: scale(1.1); 
 }
 
 .titulo-producto {
@@ -209,13 +217,3 @@ h1{
 }
 
 
-
-/*-------------------------------------------------Catalogo----------------------------------------------*/
-.guitarra{
-    transition: transform 0.3s ease;
-}
-
-    
-.guitarra:hover {
-    transform: scale(1.1); 
-}
