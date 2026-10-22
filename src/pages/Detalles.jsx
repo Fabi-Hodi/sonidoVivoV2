@@ -1,42 +1,38 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 import productos from '../data/productos.json';
 import { PlantillaPublica } from "../components/templates/PlantillaPublica";
 
-
-function Detalles(){
-
-    const { nombre } = useParams(); /* Obtiene el nombre de la URL */
+function Detalles() {
+    const { nombre } = useParams(); 
+    const navigate = useNavigate(); 
+    const { agregarAlCarrito } = useContext(CartContext);
 
     const producto = productos.find(
-        (p) => p.nombre === nombre /* Busca el producto en el JSON */
+        (p) => p.nombre === nombre 
     );
 
-    return(
+    const manejarCompra = () => {
+        agregarAlCarrito(producto); 
+        navigate('/carrito');       
+    };
 
+    return (
         <PlantillaPublica>
-
             <h1>{producto.nombre}</h1>
-
             <p>Marca: {producto.marca}</p>
-
             <p>Modelo: {producto.modelo}</p>
-
             <p>Precio: ${producto.precio}</p>
-
             <p>Stock: {producto.stock}</p>
-
             <p>{producto.descripcion}</p>
 
-            <Link to="/carrito">
-            <button>
+            {/* Mantenemos tu botón limpio, solo con la función y una clase básica de color */}
+            <button className="btn btn-warning" onClick={manejarCompra}>
                 Agregar al carrito
             </button>
-            </Link>
-
         </PlantillaPublica>
-
     );
-
 }
 
 export default Detalles;

@@ -18,7 +18,9 @@ function TarjetaProducto(props){
             <div className="precio-producto">
                 <Precio
                     valor={props.valor}
+                   
                 />
+                 
             </div>
             </div>
         </div>
