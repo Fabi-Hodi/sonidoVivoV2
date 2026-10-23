@@ -30,7 +30,7 @@ function TarjetaProducto(props) {
                     {props.disponible ? `Stock disponible: ${props.stock}` : "Agotado"}
                 </Card.Text>
                 
-                <Link to={`/detalles/${props.nombre}`} className="mt-auto text-decoration-none">
+                <Link to={`/detalles/${props.codigo}`} className="mt-auto text-decoration-none">
                     <Button variant="outline-light" className="w-100 fw-bold">
                         Ver Detalles
                     </Button>

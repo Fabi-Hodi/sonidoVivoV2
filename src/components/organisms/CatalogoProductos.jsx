@@ -44,6 +44,7 @@ function CatalogoProductos() {
                             key={producto.codigo}
                         >
                             <TarjetaProducto
+                                codigo={producto.codigo}
                                 nombre={producto.nombre}
                                 // Ahora lee la imagen directamente del JSON
                                 imagen={producto.imagen} 

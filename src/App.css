@@ -24,13 +24,13 @@ body {
 
 /*-----------------------------Inicio de sesion-----------------------------------*/
 .login-card{
-    background-color: transparent;
-    border: 0.125rem solid #edb040; 
-    padding: 1.875rem; 
+    background-color: #1f242c; 
+    border: 0.0625rem solid #495057;
+    padding: 1.875rem;
     border-radius: 0.625rem;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contenedor-login{
@@ -268,4 +268,49 @@ h1{
     border-radius: 10px;
     font-weight: bold;
     animation: bajar 0.5s ease; 
+}
+
+
+/*--------------------detalles imagen----------------------------*/
+.img-detalle{
+    width: 100%;
+    max-height: 37.5rem;
+    object-fit: contain;
+}
+
+.detalle-card{
+    background-color: #2B1D14;
+    border: 0.0625rem solid #edb040;
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.detalle-texto{
+    font-size: 1.4rem;
+}
+
+.descripcion-detalle{
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+.btn-agregar{
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.detalle-card strong{
+    color: #edb040;
+}
+
+
+
+/*foto usuario*/
+.foto-usuario{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 0.125rem solid #edb040;
 }

@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nombre": "Fabian",
+        "correo": "fabian@gmail.com",
+        "password": "jona<3",
+        "rol": "admin",
+        "foto": "/img/usuarios/Fabian.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Jonathan",
+        "correo": "jonathan@gmail.com",
+        "password": "1234",
+        "rol": "cliente",
+        "foto": "/img/usuarios/Jona.png"
+    }
+]
