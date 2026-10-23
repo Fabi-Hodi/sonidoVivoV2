@@ -4,7 +4,7 @@
         "nombre": "Fabian",
         "correo": "fabian@gmail.com",
         "password": "jona<3",
-        "rol": "admin",
+        "rol": "Administrador",
         "foto": "/img/usuarios/Fabian.png"
     },
     {
