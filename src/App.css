@@ -306,11 +306,25 @@ h1{
 
 
 
-/*foto usuario*/
+/*-----------------------------foto usuario----------------------------*/
 .foto-usuario{
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
     object-fit: cover;
     border: 0.125rem solid #edb040;
+}
+
+/* Botón cerrar sesión */
+.navbar-fondo .btn-warning {
+    background-color: #edb040;
+    color: black;
+    border: none;
+    margin-left: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.navbar-fondo .btn-warning:hover {
+    background-color: #ff9900;
+    color: black;
 }
