@@ -13,6 +13,12 @@ body {
   background: #2B1D14;
 }
 
+/* Tamaño de los enlaces del Navbar */
+.navbar-fondo .nav-link {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
 .separador{
     width: 100%;
     height: 0.125rem;    

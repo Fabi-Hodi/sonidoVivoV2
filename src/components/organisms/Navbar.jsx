@@ -31,42 +31,39 @@ function NavBar() {
                     />
                     Sonido Vivo
                 </Navbar.Brand>
-
-                {
-                    usuario ? (
-                        <Nav.Link className="d-flex align-items-center">
-                            <img
-                                src={usuario.foto}
-                                alt={usuario.nombre}
-                                className="foto-usuario me-2"
-                            />
-                            <div>
-                                <div>{usuario.nombre}</div>
-                                <small>{usuario.rol}</small>
-                             </div>
-
-                             <Boton
-                                nombreBoton="Cerrar sesión"
-                                variante="warning"
-                                onClick={cerrarSesion}
-                            />
-                        </Nav.Link>
-                    ) : 
-                        <Nav.Link as={Link} to="/login">
-                            
-                        </Nav.Link>
-                    
-                }
-
-
                 
                 <Navbar.Collapse id="menu-navegacion">
                     
-                    <Nav className="ms-auto">
+                    <Nav className="ms-auto d-flex align-items-center">
                         <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                         <Nav.Link as={Link} to="/catalogo">Catálogo</Nav.Link>
-                        <Nav.Link as={Link} to="/login">Iniciar Sesión</Nav.Link>
                         <Nav.Link as={Link} to="/carrito" className="text-warning">🛒 (0)</Nav.Link>
+
+                        {
+                            usuario ? (
+                                <Nav.Link className="d-flex align-items-center">
+                                    <img
+                                        src={usuario.foto}
+                                        alt={usuario.nombre}
+                                        className="foto-usuario me-2"
+                                    />
+                                    <div>
+                                        <div>{usuario.nombre}</div>
+                                        <small>{usuario.rol}</small>
+                                    </div>
+
+                                    <Boton
+                                        nombreBoton="Cerrar sesión"
+                                        variante="warning"
+                                        onClick={cerrarSesion}
+                                    />
+                                </Nav.Link>
+                            ) : 
+                                <Nav.Link as={Link} to="/login">
+                                    Iniciar sesion
+                                </Nav.Link>
+                        }
+                        
                     </Nav>
                     
                 </Navbar.Collapse>
