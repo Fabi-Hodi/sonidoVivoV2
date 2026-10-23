@@ -6,37 +6,20 @@ import logo from '../../assets/logo.png';
 
 
 function NavBar() {
-
-    const usuario = JSON.parse(
-    localStorage.getItem("usuario")
-    );
-
-
     return (
         <Navbar className='navbar-fondo' data-bs-theme="dark" expand="lg">
             
             <Container fluid>
-                {
-                    usuario ? (
-                        <Nav.Link className="d-flex align-items-center">
-                            <img
-                                src={usuario.foto}
-                                alt={usuario.nombre}
-                                className="foto-usuario me-2"
-                            />
-                            <div>
-                                <div>{usuario.nombre}</div>
-                                <small>{usuario.rol}</small>
-                             </div>
-                        </Nav.Link>
-                    ) : (
-                        <Nav.Link as={Link} to="/login">
-                            Iniciar Sesión
-                        </Nav.Link>
-                    )
-                }
-                
-                <Navbar.Toggle aria-controls="menu-navegacion" />
+                <Navbar.Brand as={Link} to={"/"} className="d-flex align-items-center">
+                    <img
+                        src="src/assets/logo.png" 
+                        alt="Logo de Tu sonido, tu mundo"
+                        width="40" 
+                        height="40"
+                        className="me-2" 
+                    />
+                    Sonido Vivo
+                </Navbar.Brand>
                 
                 <Navbar.Collapse id="menu-navegacion">
                     
