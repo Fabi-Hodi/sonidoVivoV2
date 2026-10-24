@@ -17,17 +17,29 @@ function Login() {
 
     const manejarLogin = (e) => {
     e.preventDefault();
-    const usuario = usuarios.find(
-        (u) =>
-            u.correo === correo &&
-            u.password === password
+
+    const usuariosLocales = JSON.parse(
+        localStorage.getItem("usuarios")
+    ) || [];
+
+    const todosLosUsuarios = [
+    ...usuarios,
+    ...usuariosLocales
+    ];
+
+    const usuario = todosLosUsuarios.find(
+    (u) =>
+        u.correo === correo &&
+        u.password === password
     );
+
     if (usuario) {
         localStorage.setItem(
             "usuario",
             JSON.stringify(usuario)
         );
         navigate("/");
+        
     } else {
         alert("Correo o contraseña incorrectos");
     }

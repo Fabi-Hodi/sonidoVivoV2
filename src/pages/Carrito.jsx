@@ -54,6 +54,14 @@ function Carrito(props){
                     <Col md={4}>
                         {/*mostramos el total calculado en el cuadro resumen */}
                         <ResumenCarrito total={totalPagar} />
+                        {carrito.length > 0 && (
+                            <Link
+                                to="/pago"
+                                className="btn btn-warning w-100 mt-3 fw-bold"
+                            >
+                                Continuar compra
+                            </Link>
+                        )}
                     </Col>
                     
                 </Row>

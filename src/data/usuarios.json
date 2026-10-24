@@ -12,7 +12,7 @@
         "nombre": "Jonathan",
         "correo": "jonathan@gmail.com",
         "password": "1234",
-        "rol": "cliente",
+        "rol": "Administrador",
         "foto": "/img/usuarios/Jona.png"
     }
 ]

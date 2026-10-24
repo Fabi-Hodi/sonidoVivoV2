@@ -6,6 +6,8 @@ import CrearCuenta from "./pages/CrearCuenta";
 import Carrito from "./pages/Carrito";
 import Contactanos from "./pages/Contactanos";
 import Detalles from './pages/Detalles';
+import Pago from './pages/Pago';
+import Resultado from './pages/Resultado';
 
 import NoEncontrado from "./pages/noEncontrado";
 import { CartProvider } from "./context/CartContext";
@@ -27,6 +29,8 @@ function App() {
           <Route path="/contactanos" element={<Contactanos />} />
           <Route path="/detalles/:codigo" element={<Detalles />} />
           <Route path="/noencontrado" element={<NoEncontrado />} />
+          <Route path="/pago" element={<Pago />} />
+          <Route path="/resultado" element={<Resultado />} />
 
           
         </Routes>

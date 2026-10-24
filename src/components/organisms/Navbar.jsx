@@ -15,7 +15,6 @@ function NavBar() {
     const cerrarSesion = () => {
         localStorage.removeItem("usuario");
         navigate("/login");
-        window.location.reload();
     };
     return (
         <Navbar className='navbar-fondo' data-bs-theme="dark" expand="lg">
@@ -23,7 +22,7 @@ function NavBar() {
             <Container fluid>
                 <Navbar.Brand as={Link} to={"/"} className="d-flex align-items-center">
                     <img
-                        src="src/assets/logo.png" 
+                        src={logo}
                         alt="Logo de Tu sonido, tu mundo"
                         width="40" 
                         height="40"
@@ -42,11 +41,15 @@ function NavBar() {
                         {
                             usuario ? (
                                 <Nav.Link className="d-flex align-items-center">
-                                    <img
-                                        src={usuario.foto}
-                                        alt={usuario.nombre}
-                                        className="foto-usuario me-2"
-                                    />
+                                    {usuario.foto ? (
+                                        <img
+                                            src={usuario.foto}
+                                            alt={usuario.nombre}
+                                            className="foto-usuario me-2"
+                                        />
+                                    ) : (
+                                        <span className="me-2">👤</span>
+                                    )}
                                     <div>
                                         <div>{usuario.nombre}</div>
                                         <small>{usuario.rol}</small>
