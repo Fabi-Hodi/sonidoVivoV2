@@ -8,6 +8,7 @@ import Contactanos from "./pages/Contactanos";
 import Detalles from './pages/Detalles';
 import Pago from './pages/Pago';
 import Resultado from './pages/Resultado';
+import AgregarProducto from "./pages/AgregarProducto";
 
 import NoEncontrado from "./pages/noEncontrado";
 import { CartProvider } from "./context/CartContext";
@@ -31,6 +32,7 @@ function App() {
           <Route path="/noencontrado" element={<NoEncontrado />} />
           <Route path="/pago" element={<Pago />} />
           <Route path="/resultado" element={<Resultado />} />
+          <Route path="/agregar-producto" element={<AgregarProducto />} />
 
           
         </Routes>

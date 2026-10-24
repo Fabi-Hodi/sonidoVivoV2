@@ -376,3 +376,100 @@ h1{
     font-weight: bold;
     padding: 0.7rem;
 }
+
+
+
+
+
+
+
+
+
+/*agregar producto*/
+
+.agregar-producto-container {
+    max-width: 780px;
+    padding: 35px 40px;
+    background-color: #1c1714;
+    border: 1px solid #493a2c;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.agregar-producto-container h1 {
+    color: #f5e9d5;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 35px !important;
+    text-align: center;
+}
+
+.formulario-producto .form-label {
+    color: #e8dac5;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.formulario-producto .form-control,
+.formulario-producto .form-select {
+    background-color: #2b2520;
+    color: #ffffff;
+    border: 1px solid #574737;
+    border-radius: 9px;
+    padding: 12px 15px;
+    font-size: 15px;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.formulario-producto .form-control:focus,
+.formulario-producto .form-select:focus {
+    background-color: #2b2520;
+    color: #ffffff;
+    border-color: #e6ad45;
+    box-shadow: 0 0 0 3px rgba(230, 173, 69, 0.18);
+}
+
+.formulario-producto .form-control::placeholder {
+    color: #a99b8d;
+}
+
+.formulario-producto .form-select option {
+    background-color: #2b2520;
+    color: #ffffff;
+}
+
+.formulario-producto textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.formulario-producto .btn-warning {
+    background-color: #e6ad45;
+    border: none;
+    color: #20160e;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 9px;
+}
+
+.formulario-producto .btn-warning:hover {
+    background-color: #f4c46c;
+    color: #20160e;
+}
+
+.formulario-producto .btn-secondary {
+    background-color: transparent;
+    border: 1px solid #8d7965;
+    color: #e8dac5;
+    padding: 12px 24px;
+    border-radius: 9px;
+}
+
+.formulario-producto .btn-secondary:hover {
+    background-color: #40352d;
+    border-color: #b6a08b;
+    color: #ffffff;
+}
+
