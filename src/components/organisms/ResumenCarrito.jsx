@@ -1,5 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 function ResumenCarrito(props) {
     return (
@@ -18,9 +19,14 @@ function ResumenCarrito(props) {
                 <span>${props.total}</span>
             </div>
             
-            <Button variant="warning" className="w-100 fw-bold text-dark fs-5">
-                Proceder al pago
-            </Button>
+            <Link to="/pago">
+                <Button
+                    variant="warning"
+                    className="w-100 fw-bold text-dark fs-5"
+                >
+                    Proceder al pago
+                </Button>
+            </Link>
         </Card>
     );
 }

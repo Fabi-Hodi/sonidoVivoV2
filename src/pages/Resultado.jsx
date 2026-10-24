@@ -5,19 +5,32 @@ function Resultado(){
     const pedido = JSON.parse(
         localStorage.getItem("pedido")
     );
+
+    if (!pedido) {
+    return (
+        <PlantillaPublica>
+            <div className="container text-center mt-5">
+                <h1>No existe ningún pedido</h1>
+                <Link to="/" className="btn btn-warning">
+                    Volver al inicio
+                </Link>
+            </div>
+        </PlantillaPublica>
+    );
+    }
+
     return(
         <PlantillaPublica>
             <div className="container text-center mt-5">
                 <h1 className="text-success">
                     Compra Exitosa ✅
                 </h1>
-                <p>
-                    Número de pedido:
-                    {pedido.numero}
+                <p className="fs-4">
+                    <strong>Número de pedido:</strong> {pedido.numero}
                 </p>
-                <p>
-                    Método de entrega:
-                    {pedido.entrega}
+
+                <p className="fs-5">
+                    <strong>Método de entrega:</strong> {pedido.entrega}
                 </p>
                 <Link
                     to="/"

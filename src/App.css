@@ -334,3 +334,45 @@ h1{
     background-color: #ff9900;
     color: black;
 }
+
+
+
+
+
+
+/*---------------------pago------------------------*/
+/* Página de pago */
+.pago-card {
+    background-color: #212529;
+    border: 0.0625rem solid #6c757d;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+.pago-card h1 {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.pago-card h3 {
+    font-size: 1.4rem;
+    color: #edb040;
+    margin-bottom: 1rem;
+}
+
+.pago-card .form-control {
+    border-radius: 0.4rem;
+    padding: 0.7rem;
+}
+
+.pago-card .btn-warning {
+    background-color: #edb040;
+    color: black;
+    border: none;
+    width: 100%;
+    font-weight: bold;
+    padding: 0.7rem;
+}
