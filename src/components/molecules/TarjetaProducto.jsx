@@ -35,6 +35,16 @@ function TarjetaProducto(props) {
                         Ver Detalles
                     </Button>
                 </Link>
+
+                {props.esAdmin && (
+                    <Button
+                        variant="danger"
+                        className="w-100 mt-2 fw-bold"
+                        onClick={props.onEliminar}
+                    >
+                        Eliminar
+                    </Button>
+                )}
             </Card.Body>
         </Card>
     );

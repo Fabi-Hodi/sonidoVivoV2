@@ -59,7 +59,8 @@ function AgregarProducto() {
             codigo: codigo,
             nombre: nuevoProducto.nombre.trim(),
             precio: Number(nuevoProducto.precio),
-            stock: Number(nuevoProducto.stock)
+            stock: Number(nuevoProducto.stock),
+            imagen: "/img/productosNuevos/nuevo.png"
         };
 
         const nuevaLista = [...listaProductos, productoFinal];

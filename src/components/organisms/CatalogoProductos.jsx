@@ -21,17 +21,6 @@ function CatalogoProductos() {
     const usuario = JSON.parse(localStorage.getItem("usuario"));
     const esAdmin = usuario?.rol === "Administrador";
 
-    const agregarProducto = (nuevoProducto) => {
-    if (!esAdmin) return;
-
-    if (listaProductos.some((producto) => producto.codigo === nuevoProducto.codigo)) {
-        alert("Ya existe un producto con ese código");
-        return;
-    }
-    const nuevaLista = [...listaProductos, nuevoProducto];
-    setListaProductos(nuevaLista);
-    localStorage.setItem("productos", JSON.stringify(nuevaLista));
-    };
     const eliminarProducto = (codigo) => {
         if (!esAdmin) return;
 
@@ -42,16 +31,27 @@ function CatalogoProductos() {
         localStorage.setItem("productos", JSON.stringify(nuevaLista));
     };
 
+    const restaurarCatalogo = () => {
+    localStorage.removeItem("productos");
+    window.location.reload();
+    };
+
     return (
         <Container className="my-4">
             {esAdmin && (
                 <div className="text-end mb-4">
                     <Link
                         to="/agregar-producto"
-                        className="btn btn-warning"
+                        className="btn btn-warning me-2"
                     >
                         + Agregar producto
                     </Link>
+                    <button
+                        className="btn btn-secondary"
+                        onClick={restaurarCatalogo}
+                    >
+                        Restaurar catálogo
+                    </button>
                 </div>
             )}
             {/* Buscador por nombre */}
