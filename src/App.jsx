@@ -9,6 +9,7 @@ import Detalles from './pages/Detalles';
 import Pago from './pages/Pago';
 import Resultado from './pages/Resultado';
 import AgregarProducto from "./pages/AgregarProducto";
+import EditarProducto from './pages/EditarProducto';
 
 import NoEncontrado from "./pages/noEncontrado";
 import { CartProvider } from "./context/CartContext";
@@ -33,6 +34,7 @@ function App() {
           <Route path="/pago" element={<Pago />} />
           <Route path="/resultado" element={<Resultado />} />
           <Route path="/agregar-producto" element={<AgregarProducto />} />
+          <Route path="/editar-producto/:codigo" element={<EditarProducto />} />
 
           
         </Routes>

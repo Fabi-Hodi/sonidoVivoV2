@@ -37,6 +37,20 @@ function TarjetaProducto(props) {
                 </Link>
 
                 {props.esAdmin && (
+                    <Link
+                        to={`/editar-producto/${props.codigo}`}
+                        className="text-decoration-none"
+                    >
+                        <Button
+                            variant="primary"
+                            className="w-100 mt-2 fw-bold"
+                        >
+                            Editar
+                        </Button>
+                    </Link>
+                )}
+
+                {props.esAdmin && (
                     <Button
                         variant="danger"
                         className="w-100 mt-2 fw-bold"
