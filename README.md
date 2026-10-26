@@ -13,6 +13,7 @@ La aplicación permite iniciar sesión, explorar el catálogo, agregar productos
 al carrito y, para el rol administrador, gestionar el catálogo.
 
 ## Estructura del proyecto
+```txt
 src
 │
 ├── components
@@ -85,6 +86,7 @@ src
 ├── App.css
 ├── main.jsx
 └── setupTests.js
+```
 
 ## Tecnologías
 - React
