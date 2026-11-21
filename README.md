@@ -24,6 +24,7 @@ src
 │   │   ├── ContadorCantidad.jsx
 │   │   ├── EtiquetaStock.jsx
 │   │   ├── Input.jsx
+|   |   ├── Mensaje.jsx 
 │   │   ├── Precio.jsx
 │   │   ├── Selector.jsx
 │   │   └── Separador.jsx
@@ -64,6 +65,8 @@ src
 │   ├── Pago.jsx
 │   └── Resultado.jsx
 │
+├── services
+│   └── api.js
 │
 ├── data
 │   ├── productos.json
@@ -150,3 +153,30 @@ npm run dev
 
 ## Material complementario
 https://drive.google.com/drive/folders/1vgA0f8f0bYEU_cqbdvunBZYgfk0wdNyZ?usp=drive_link
+
+
+## Backend
+- Repositorio: https://github.com/Fabi-Hodi/sonidovivo-backend
+- API REST en Spring Boot, desplegada en EC2, con PostgreSQL en Amazon RDS.
+- Swagger: http://54.88.227.204:8080/swagger-ui.html (la IP cambia al reiniciar el laboratorio de AWS)
+
+## Conexión con la API
+Crear un archivo `.env.local` en la raíz del proyecto (no se sube a GitHub), con la IP del backend:
+
+```
+VITE_API_URL=http://IP_DEL_BACKEND:8080/api/v1
+```
+
+Las llamadas a la API están en `src/services/api.js`.
+
+- **Crear cuenta** (`POST /auth/register`): muestra "Creando cuenta..." mientras espera, un mensaje de exito y los errores que devuelve el servidor (datos invalidos o correo repetido).
+- **Iniciar sesion** (`POST /auth/login`): muestra "Ingresando...", guarda el token y los datos del usuario y muestra un error si el correo o la contraseña son incorrectos.
+- **Cerrar sesion**: borra el token y los datos del usuario del navegador.
+
+## Estado de la integración
+
+| Funcionalidad | Diseñado | Implementado | Probado |
+|---|---|---|---|
+| Crear cuenta con la API | Sí | Sí | Sí (21-11-2026) |
+| Iniciar sesión con la API | Sí | Sí | Sí (21-11-2026) |
+| Cerrar sesión (borra el token) | Sí | Sí | Sí (21-11-2026) |
