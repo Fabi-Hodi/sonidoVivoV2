@@ -14,6 +14,7 @@ function NavBar() {
     const navigate = useNavigate();
     const cerrarSesion = () => {
         localStorage.removeItem("usuario");
+        localStorage.removeItem("token");
         navigate("/login");
     };
     return (
