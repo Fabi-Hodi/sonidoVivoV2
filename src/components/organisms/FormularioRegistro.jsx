@@ -2,8 +2,10 @@ import Boton from '../atoms/Boton';
 import Input from '../atoms/Input';
 
 function FormularioRegistro(props) {
+    const errores = props.errores || {};
+
     return (
-        <form onSubmit={props.onSubmit}>
+        <form onSubmit={props.onSubmit} noValidate>
 
             <div className='mb-4 contenedor-input'>
                 <Input
@@ -13,6 +15,7 @@ function FormularioRegistro(props) {
                     placeholder="Ingrese su nombre completo"
                     valor={props.nombreCompleto}
                     onChange={props.onNombreCompletoChange}
+                    error={errores.nombre}
                     required
                 />
             </div>
@@ -24,6 +27,7 @@ function FormularioRegistro(props) {
                     tipo="date"
                     valor={props.fechaNacimiento}
                     onChange={props.onFechaNacimientoChange}
+                    error={errores.fechaNacimiento}
                     required
                 />
             </div>
@@ -36,6 +40,7 @@ function FormularioRegistro(props) {
                     placeholder="Ingrese su correo"
                     valor={props.correo}
                     onChange={props.onCorreoChange}
+                    error={errores.correo}
                     required
                 />
             </div>
@@ -45,17 +50,19 @@ function FormularioRegistro(props) {
                     id="password"
                     textoLabel="Contraseña"
                     tipo="password"
-                    placeholder="Ingrese su contraseña"
+                    placeholder="Ingrese su contraseña (mínimo 8 caracteres)"
                     valor={props.password}
                     onChange={props.onPasswordChange}
+                    error={errores.password}
                     required
                 />
             </div>
 
             <div className='mb-3 boton-login'>
                 <Boton
-                    nombreBoton="Crear cuenta"
+                    nombreBoton={props.cargando ? "Creando cuenta..." : "Crear cuenta"}
                     variante="primary"
+                    deshabilitado={props.cargando}
                 />
             </div>
 

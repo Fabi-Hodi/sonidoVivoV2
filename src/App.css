@@ -476,3 +476,9 @@ h1{
     color: #ffffff;
 }
 
+
+/* mensaje de error debajo del campo con el mismo ancho del input */
+.campo-input .invalid-feedback {
+    max-width: 15.625rem;
+    text-align: left;
+}
