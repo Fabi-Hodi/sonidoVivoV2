@@ -5,16 +5,15 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import Boton from '../atoms/Boton';
 import { useNavigate } from 'react-router-dom';
+import { cerrarSesionLocal, obtenerUsuario } from '../../services/sesion';
 
 function NavBar() {
-    const usuario = JSON.parse(
-    localStorage.getItem("usuario")
-    );
+    const usuario = obtenerUsuario();
 
     const navigate = useNavigate();
     const cerrarSesion = () => {
-        localStorage.removeItem("usuario");
-        localStorage.removeItem("token");
+        // borre el token y los datos del usuario guardados en el navegador
+        cerrarSesionLocal();
         navigate("/login");
     };
     return (

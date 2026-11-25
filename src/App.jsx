@@ -11,7 +11,10 @@ import Resultado from './pages/Resultado';
 import AgregarProducto from "./pages/AgregarProducto";
 import EditarProducto from './pages/EditarProducto';
 
+import AccesoDenegado from "./pages/AccesoDenegado";
 import NoEncontrado from "./pages/noEncontrado";
+import RutaProtegida from "./rutas/RutaProtegida";
+import VerificarSesion from "./rutas/VerificarSesion";
 import { CartProvider } from "./context/CartContext";
 
 
@@ -22,7 +25,9 @@ function App() {
     return (
     <CartProvider>
       <BrowserRouter>
+        <VerificarSesion />
         <Routes>
+          {/* rutas publicas */}
           <Route path="/" element={<Inicio />} />
           <Route path="/login" element={<Login />} />
           <Route path="/crearCuenta" element={<CrearCuenta />} />
@@ -31,12 +36,18 @@ function App() {
           <Route path="/contactanos" element={<Contactanos />} />
           <Route path="/detalles/:codigo" element={<Detalles />} />
           <Route path="/noencontrado" element={<NoEncontrado />} />
-          <Route path="/pago" element={<Pago />} />
-          <Route path="/resultado" element={<Resultado />} />
-          <Route path="/agregar-producto" element={<AgregarProducto />} />
-          <Route path="/editar-producto/:codigo" element={<EditarProducto />} />
+          <Route path="/acceso-denegado" element={<AccesoDenegado />} />
 
-          
+          {/* rutas que exigen sesion (cualquier rol) */}
+          <Route path="/pago" element={<RutaProtegida><Pago /></RutaProtegida>} />
+          <Route path="/resultado" element={<RutaProtegida><Resultado /></RutaProtegida>} />
+
+          {/* rutas solo para Administrador */}
+          <Route path="/agregar-producto" element={<RutaProtegida roles={["Administrador"]}><AgregarProducto /></RutaProtegida>} />
+          <Route path="/editar-producto/:codigo" element={<RutaProtegida roles={["Administrador"]}><EditarProducto /></RutaProtegida>} />
+
+          {/* cualquier otra ruta */}
+          <Route path="*" element={<NoEncontrado />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>

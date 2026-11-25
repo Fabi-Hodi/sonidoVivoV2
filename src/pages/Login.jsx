@@ -3,29 +3,31 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../App.css';
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
 import FormularioLogin from '../components/organisms/FormularioLogin';
 import Mensaje from '../components/atoms/Mensaje';
 import { PlantillaPublica } from '../components/templates/PlantillaPublica';
 import { iniciarSesion } from '../services/api';
-
-// la API devuelve el rol en mayusculas (ej. "ADMINISTRADOR").
-// la app lo usa como "Administrador", asi que se adapta aqui.
-function formatearRol(rol) {
-    return rol.charAt(0) + rol.slice(1).toLowerCase();
-}
+import { guardarSesion } from '../services/sesion';
 
 function Login() {
     const [correo, setCorreo] = useState('');
     const [password, setPassword] = useState('');
 
-    // estados de la peticion. cargando, exito y error
+    // estados de la peticion: cargando, exito y error
     const [cargando, setCargando] = useState(false);
     const [mensajeExito, setMensajeExito] = useState('');
     const [mensajeError, setMensajeError] = useState('');
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const [parametros] = useSearchParams();
+
+    // aviso cuando se llega desde una ruta protegida o porque el token vencio
+    const aviso = parametros.get('sesion') === 'expirada'
+        ? 'Tu sesión expiró. Inicia sesión nuevamente.'
+        : location.state?.mensaje;
 
     const manejarLogin = async (e) => {
         e.preventDefault();
@@ -35,16 +37,12 @@ function Login() {
 
         try {
             const respuesta = await iniciarSesion(correo, password);
-
-            // el token se envia en las siguientes peticiones a la API
-            localStorage.setItem('token', respuesta.accessToken);
-            localStorage.setItem('usuario', JSON.stringify({
-                ...respuesta.usuario,
-                rol: formatearRol(respuesta.usuario.rol),
-            }));
+            guardarSesion(respuesta.accessToken, respuesta.usuario);
 
             setMensajeExito(`Bienvenido, ${respuesta.usuario.nombre}`);
-            setTimeout(() => navigate('/'), 1200);
+            // Si venía desde una ruta protegida, vuelve a ella
+            const destino = location.state?.desde || '/';
+            setTimeout(() => navigate(destino), 1200);
         } catch (error) {
             setMensajeError(error.message);
         } finally {
@@ -62,6 +60,7 @@ function Login() {
                                 Iniciar sesión
                             </h1>
 
+                            {!mensajeExito && !mensajeError && <Mensaje tipo="error" texto={aviso} />}
                             <Mensaje tipo="exito" texto={mensajeExito} />
                             <Mensaje tipo="error" texto={mensajeError} />
 
