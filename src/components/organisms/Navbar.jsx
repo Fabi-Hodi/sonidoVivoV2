@@ -36,6 +36,9 @@ function NavBar() {
                     <Nav className="ms-auto d-flex align-items-center">
                         <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                         <Nav.Link as={Link} to="/catalogo">Catálogo</Nav.Link>
+                        {usuario?.rol === "Administrador" && (
+                            <Nav.Link as={Link} to="/admin/usuarios">Usuarios</Nav.Link>
+                        )}
                         <Nav.Link as={Link} to="/carrito" className="text-warning">🛒 (0)</Nav.Link>
 
                         {

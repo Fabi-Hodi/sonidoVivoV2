@@ -10,6 +10,7 @@ import Pago from './pages/Pago';
 import Resultado from './pages/Resultado';
 import AgregarProducto from "./pages/AgregarProducto";
 import EditarProducto from './pages/EditarProducto';
+import AdminUsuarios from './pages/AdminUsuarios';
 
 import AccesoDenegado from "./pages/AccesoDenegado";
 import NoEncontrado from "./pages/noEncontrado";
@@ -45,6 +46,7 @@ function App() {
           {/* rutas solo para Administrador */}
           <Route path="/agregar-producto" element={<RutaProtegida roles={["Administrador"]}><AgregarProducto /></RutaProtegida>} />
           <Route path="/editar-producto/:codigo" element={<RutaProtegida roles={["Administrador"]}><EditarProducto /></RutaProtegida>} />
+          <Route path="/admin/usuarios" element={<RutaProtegida roles={["Administrador"]}><AdminUsuarios /></RutaProtegida>} />
 
           {/* cualquier otra ruta */}
           <Route path="*" element={<NoEncontrado />} />
