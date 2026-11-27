@@ -1,59 +1,85 @@
-// funciones para comunicarse con la API del backend (spring Boot)
-// La dirección de la API se configura en el archivo .env.local (VITE_API_URL)
+// funciones para comunicarse con la API del backend (Spring Boot) usando axios.
+// la dirección de la API se configura en el archivo .env.local (VITE_API_URL).
+import axios from 'axios';
 import { cerrarSesionLocal, obtenerToken } from './sesion';
 
-const API_URL = import.meta.env.VITE_API_URL;
+// cliente de axios con la dirección base de la API
+const api = axios.create({
+    baseURL: import.meta.env.VITE_API_URL,
+    headers: { 'Content-Type': 'application/json' },
+});
 
-async function peticion(ruta, opciones = {}) {
+// interceptor de solicitud. agrega el token del login a cada peticion protegida
+api.interceptors.request.use((config) => {
     const token = obtenerToken();
-
-    const headers = { 'Content-Type': 'application/json' };
     if (token) {
-        // El token del login se envía en cada petición protegida
-        headers.Authorization = `Bearer ${token}`;
+        config.headers.Authorization = `Bearer ${token}`;
     }
+    return config;
+});
 
-    let respuesta;
-    try {
-        respuesta = await fetch(`${API_URL}${ruta}`, { ...opciones, headers });
-    } catch {
-        throw new Error('No se pudo conectar con el servidor. Intenta más tarde.');
-    }
+// interceptor de respuesta. devuelve solo los datos y unifica el manejo de errores
+api.interceptors.response.use(
+    (respuesta) => respuesta.data,
+    (err) => {
+        // Sin respuesta = el servidor no esta disponible o no hay conexion
+        if (!err.response) {
+            return Promise.reject(new Error('No se pudo conectar con el servidor. Intenta más tarde.'));
+        }
 
-    // 204 = respuesta sin contenido
-    const datos = respuesta.status === 204 ? null : await respuesta.json().catch(() => null);
+        const { status, data } = err.response;
 
-    if (!respuesta.ok) {
-        // si habia sesión y el backend responde 401, el token vencio o no es válido
-        if (respuesta.status === 401 && token) {
+        // si habia sesion y el backend responde 401, el token vencio o no es valido
+        if (status === 401 && obtenerToken()) {
             cerrarSesionLocal();
             window.location.href = '/login?sesion=expirada';
         }
-        const error = new Error(datos?.mensaje || 'Ocurrió un error inesperado');
-        error.status = respuesta.status;
-        error.campos = datos?.campos; // errores por campo cuando la API responde 400
-        throw error;
-    }
 
-    return datos;
-}
+        const error = new Error(data?.mensaje || 'Ocurrió un error inesperado');
+        error.status = status;
+        error.campos = data?.campos; // errores por campo cuando la API responde 400
+        return Promise.reject(error);
+    }
+);
 
 // ---------- autenticacion ----------
 
 export function registrarUsuario(usuario) {
-    return peticion('/auth/register', {
-        method: 'POST',
-        body: JSON.stringify(usuario),
-    });
+    return api.post('/auth/register', usuario);
 }
 
 export function iniciarSesion(correo, password) {
-    return peticion('/auth/login', {
-        method: 'POST',
-        body: JSON.stringify({ correo, password }),
-    });
+    return api.post('/auth/login', { correo, password });
 }
 
 export function obtenerMiPerfil() {
-    return peticion('/auth/me');
+    return api.get('/auth/me');
 }
+
+// ---------- usuarios ----------
+
+export function listarUsuarios() {
+    return api.get('/usuarios');
+}
+
+export function crearUsuario(usuario) {
+    return api.post('/usuarios', usuario);
+}
+
+export function actualizarUsuario(id, datos) {
+    return api.put(`/usuarios/${id}`, datos);
+}
+
+export function cambiarRolUsuario(id, rol) {
+    return api.patch(`/usuarios/${id}/rol`, { rol });
+}
+
+export function desactivarUsuario(id) {
+    return api.delete(`/usuarios/${id}`);
+}
+
+export function reactivarUsuario(id) {
+    return api.patch(`/usuarios/${id}/reactivar`);
+}
+
+export default api;
