@@ -59,8 +59,12 @@ function AdminUsuarios() {
         }
     };
 
+    // carga inicial: el estado se actualiza dentro de las promesas, no directo en el efecto
     useEffect(() => {
-        cargarUsuarios();
+        listarUsuarios()
+            .then((lista) => setUsuarios(lista))
+            .catch((error) => setMensaje({ texto: textoError(error), tipo: 'error' }))
+            .finally(() => setCargando(false));
     }, []);
 
     const abrirCrear = () => {

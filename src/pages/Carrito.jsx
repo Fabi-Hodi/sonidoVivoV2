@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import ItemCarrito from "../components/molecules/ItemCarrito";
 import ResumenCarrito from "../components/organisms/ResumenCarrito";
 
-function Carrito(props){
+function Carrito(){
     //nos conectamos al context y bajamos la lista de productos
     const { carrito } = useContext(CartContext);
 

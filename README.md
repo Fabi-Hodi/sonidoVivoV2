@@ -22,9 +22,9 @@ src
 │   │   ├── Boton.jsx
 │   │   ├── CampoTexto.jsx
 │   │   ├── ContadorCantidad.jsx
-│   │   ├── EtiquetaStock.jsx
+│   │   ├── EticketaStock.jsx
 │   │   ├── Input.jsx
-|   |   ├── Mensaje.jsx 
+│   │   ├── Mensaje.jsx
 │   │   ├── Precio.jsx
 │   │   ├── Selector.jsx
 │   │   └── Separador.jsx
@@ -52,6 +52,8 @@ src
 │       
 │
 ├── pages
+│   ├── AccesoDenegado.jsx
+│   ├── AdminUsuarios.jsx
 │   ├── AgregarProducto.jsx
 │   ├── Carrito.jsx
 │   ├── Catalogo.jsx
@@ -65,8 +67,13 @@ src
 │   ├── Pago.jsx
 │   └── Resultado.jsx
 │
+├── rutas
+│   ├── RutaProtegida.jsx
+│   └── VerificarSesion.jsx
+│
 ├── services
-│   └── api.js
+│   ├── api.js
+│   └── sesion.js
 │
 ├── data
 │   ├── productos.json
@@ -78,7 +85,7 @@ src
 │   ├── Input.test.jsx
 │   ├── NavbarConUsuario.test.jsx
 │   ├── NavbarSinUsuario.test.jsx
-|   |── PruebaMala.test.jsx
+│   ├── PruebaMala.test.jsx
 │   ├── Resultado.test.jsx
 │   ├── ResumenCarrito.test.jsx
 │   ├── TarjetaProductoAgotado.test.jsx
@@ -105,9 +112,9 @@ src
 - Git y GitHub
 
 ## Funcionalidades Implementadas
-##Cliente
+### Cliente
 - Registrarse
-- Iniciar de sesión
+- Iniciar sesión
 - ver el catálogo de productos
 - ver las Categorías
 - ver Detalle del producto
@@ -115,23 +122,24 @@ src
 - Confirmar su compra
 - ver resultado de su compra
   
-##Administrador
+### Administrador
 - Crear productos
 - Leer productos
 - Actualizar productos
 - Eliminar productos
+- Gestionar usuarios: listar, crear, editar, cambiar rol, desactivar y reactivar
 
 
-##Instalación
+## Instalación
 Clonar el repositorio:
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/Fabi-Hodi/sonidoVivoV2.git
 Entrar al proyecto:
 cd sonidoVivoV2
 Instalar dependencias:
 npm install
 
 
-##Pruebas Unitarias
+## Pruebas Unitarias
 
 Ejecutar Vitest:
 npm run test
@@ -158,7 +166,7 @@ https://drive.google.com/drive/folders/1vgA0f8f0bYEU_cqbdvunBZYgfk0wdNyZ?usp=dri
 ## Backend
 - Repositorio: https://github.com/Fabi-Hodi/sonidovivo-backend
 - API REST en Spring Boot, desplegada en EC2, con PostgreSQL en Amazon RDS.
-- Swagger: http://54.88.227.204:8080/swagger-ui.html (la IP cambia al reiniciar el laboratorio de AWS)
+- Swagger: http://52.73.234.170:8080/swagger-ui.html
 
 ## Conexión con la API
 Crear un archivo `.env.local` en la raíz del proyecto (no se sube a GitHub), con la IP del backend:
@@ -167,7 +175,8 @@ Crear un archivo `.env.local` en la raíz del proyecto (no se sube a GitHub), co
 VITE_API_URL=http://IP_DEL_BACKEND:8080/api/v1
 ```
 
-Las llamadas a la API están en `src/services/api.js`.
+Las llamadas a la API están en `src/services/api.js` y usan axios. El token se agrega a cada petición con un interceptor, y si la API responde 401 se cierra la sesión.
+La sesión (token y usuario) se guarda en `localStorage` mediante `src/services/sesion.js`.
 
 - **Crear cuenta** (`POST /auth/register`): muestra "Creando cuenta..." mientras espera, un mensaje de exito y los errores que devuelve el servidor (datos invalidos o correo repetido).
 - **Iniciar sesion** (`POST /auth/login`): muestra "Ingresando...", guarda el token y los datos del usuario y muestra un error si el correo o la contraseña son incorrectos.
@@ -180,3 +189,7 @@ Las llamadas a la API están en `src/services/api.js`.
 | Crear cuenta con la API | Sí | Sí | Sí (21-11-2026) |
 | Iniciar sesión con la API | Sí | Sí | Sí (21-11-2026) |
 | Cerrar sesión (borra el token) | Sí | Sí | Sí (21-11-2026) |
+| Sesión que se mantiene al recargar (`/auth/me`) | Sí | Sí | Sí (25-11-2026) |
+| Rutas protegidas por sesión y por rol | Sí | Sí | Sí (25-11-2026) |
+| Conexión con la API usando axios | Sí | Sí | Sí (27-11-2026) |
+| Gestión de usuarios (administrador) | Sí | Sí | Sí (28-11-2026) |
