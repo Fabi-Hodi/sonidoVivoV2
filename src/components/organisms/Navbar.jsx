@@ -6,9 +6,15 @@ import logo from '../../assets/logo.png';
 import Boton from '../atoms/Boton';
 import { useNavigate } from 'react-router-dom';
 import { cerrarSesionLocal, obtenerUsuario } from '../../services/sesion';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 function NavBar() {
     const usuario = obtenerUsuario();
+    // cantidad de productos en el carrito
+    const contextoCarrito = useContext(CartContext);
+    const carrito = contextoCarrito?.carrito || [];
+    const totalCarrito = carrito.reduce((suma, p) => suma + p.cantidad, 0);
 
     const navigate = useNavigate();
     const cerrarSesion = () => {
@@ -36,10 +42,15 @@ function NavBar() {
                     <Nav className="ms-auto d-flex align-items-center">
                         <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                         <Nav.Link as={Link} to="/catalogo">Catálogo</Nav.Link>
+                        {usuario && (
+                            <Nav.Link as={Link} to="/pedidos">
+                                {usuario.rol === "Cliente" ? "Mis pedidos" : "Pedidos"}
+                            </Nav.Link>
+                        )}
                         {usuario?.rol === "Administrador" && (
                             <Nav.Link as={Link} to="/admin/usuarios">Usuarios</Nav.Link>
                         )}
-                        <Nav.Link as={Link} to="/carrito" className="text-warning">🛒 (0)</Nav.Link>
+                        <Nav.Link as={Link} to="/carrito" className="text-warning">🛒 ({totalCarrito})</Nav.Link>
 
                         {
                             usuario ? (

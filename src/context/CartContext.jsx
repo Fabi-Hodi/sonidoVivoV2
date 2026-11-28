@@ -35,9 +35,14 @@ export function CartProvider(props) {
         setCarrito(carrito.filter(producto => producto.id !== id));
     };
 
+    // deja el carrito vacio despues de confirmar la compra
+    const vaciarCarrito = () => {
+        setCarrito([]);
+    };
+
     return (
         //exportamos las nuevas funciones en el value
-        <CartContext.Provider value={{ carrito, agregarAlCarrito, actualizarCantidad, eliminarProducto }}>
+        <CartContext.Provider value={{ carrito, agregarAlCarrito, actualizarCantidad, eliminarProducto, vaciarCarrito }}>
             {props.children}
         </CartContext.Provider>
     );

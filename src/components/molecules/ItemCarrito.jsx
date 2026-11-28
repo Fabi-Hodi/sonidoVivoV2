@@ -11,6 +11,8 @@ function ItemCarrito(props) {
     const { actualizarCantidad, eliminarProducto } = useContext(CartContext);
     // se calcula el subtotal multiplicando precio por cantidad
     const subtotal = props.precio * props.cantidad;
+    // no se puede pedir mas de lo que hay en stock
+    const enElLimite = props.cantidad >= props.stock;
 
     return (
         <Card className="mb-3 bg-dark text-white border-secondary">
@@ -59,6 +61,7 @@ function ItemCarrito(props) {
                             variant="outline-light" 
                             size="sm" 
                             onClick={() => actualizarCantidad(props.id, props.cantidad + 1)}
+                            disabled={enElLimite}
                         >
                             +
                         </Button>
@@ -73,6 +76,9 @@ function ItemCarrito(props) {
                             <BsTrash size={18} /> 
                         </Button>
                     </div>
+                    {enElLimite && (
+                        <small className="text-danger d-block mt-2">Máximo disponible: {props.stock}</small>
+                    )}
                 </Col>
                 
             </Row>

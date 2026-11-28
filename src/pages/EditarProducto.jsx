@@ -1,48 +1,64 @@
-import productos from "../data/productos.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
+import Mensaje from "../components/atoms/Mensaje";
+import { obtenerProductoPorCodigo, actualizarProducto } from "../services/api";
 
 
 function EditarProducto(){
     const { codigo } = useParams();
-    const guardados = localStorage.getItem("productos");
-
-    const listaProductos = guardados
-        ? JSON.parse(guardados)
-        : productos;
-
-    const producto = listaProductos.find(
-        (p) => p.codigo === codigo
-    );
-
-    const [nombre, setNombre] = useState(producto.nombre);
-    const [precio, setPrecio] = useState(producto.precio);
-    const [stock, setStock] = useState(producto.stock);
-
-
     const navigate = useNavigate();
-    const guardarCambios = () => {
-    const nuevaLista = listaProductos.map(
-        (p) =>
-            p.codigo === codigo
-                ? {
-                    ...p,
-                    nombre,
-                    precio: Number(precio),
-                    stock: Number(stock)
-                }
-                : p
-    );
-    localStorage.setItem(
-        "productos",
-        JSON.stringify(nuevaLista)
-    );
-    alert("Producto actualizado correctamente");
-    navigate("/catalogo");
+
+    // el producto se carga desde la API y se guarda con PUT /productos/{id}
+    const [producto, setProducto] = useState(null);
+    const [nombre, setNombre] = useState("");
+    const [precio, setPrecio] = useState("");
+    const [stock, setStock] = useState("");
+    const [error, setError] = useState("");
+
+    useEffect(() => {
+        obtenerProductoPorCodigo(codigo)
+            .then((datos) => {
+                setProducto(datos);
+                setNombre(datos.nombre);
+                setPrecio(datos.precio);
+                setStock(datos.stock);
+            })
+            .catch((err) => setError(err.message));
+    }, [codigo]);
+
+    const guardarCambios = async () => {
+        setError("");
+        // el PUT necesita el producto completo, por eso se envian tambien los datos que no cambian
+        const datos = {
+            codigo: producto.codigo,
+            nombre: nombre.trim(),
+            marca: producto.marca,
+            modelo: producto.modelo,
+            descripcion: producto.descripcion,
+            precio: Number(precio),
+            stock: Number(stock),
+            imagen: producto.imagen,
+            categoriaId: producto.categoriaId
+        };
+        try {
+            await actualizarProducto(producto.id, datos);
+            alert("Producto actualizado correctamente");
+            navigate("/catalogo");
+        } catch (err) {
+            const detalle = err.campos ? Object.values(err.campos).join('. ') : '';
+            setError(detalle ? `${err.message}: ${detalle}` : err.message);
+        }
     };
 
-
+    if (!producto) {
+        return (
+            <Container className="my-5 text-white">
+                <Mensaje texto={error} tipo="error" />
+                {!error && <p>Cargando producto...</p>}
+            </Container>
+        );
+    }
 
     return (
         <Container className="d-flex justify-content-center">
@@ -51,6 +67,8 @@ function EditarProducto(){
                 <h1>Editar Producto</h1>
 
                 <form className="formulario-producto">
+
+                    <Mensaje texto={error} tipo="error" />
 
                     <div className="mb-3">
                         <label className="form-label">
@@ -121,7 +139,7 @@ function EditarProducto(){
             </div>
         </Container>
         );
-        
+
 
 
 }

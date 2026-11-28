@@ -1,27 +1,36 @@
-import '../App.css'; 
-import { useState } from "react";
+import '../App.css';
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import productos from "../data/productos.json";
+import Mensaje from "../components/atoms/Mensaje";
+import { crearProducto, listarCategorias } from "../services/api";
 
 function AgregarProducto() {
     const navigate = useNavigate();
 
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
-    const esAdmin = usuario?.rol === "Administrador";
+    // las categorias se cargan desde la API (GET /categorias)
+    const [categorias, setCategorias] = useState([]);
+    const [error, setError] = useState('');
+    const [guardando, setGuardando] = useState(false);
 
     const [nuevoProducto, setNuevoProducto] = useState({
         codigo: "",
         nombre: "",
-        categoria: "",
+        categoriaId: "",
         marca: "",
         modelo: "",
         precio: "",
         stock: "",
         descripcion: ""
     });
+
+    useEffect(() => {
+        listarCategorias()
+            .then((lista) => setCategorias(lista))
+            .catch((err) => setError(err.message));
+    }, []);
 
     const cambiarDato = (e) => {
         const { name, value } = e.target;
@@ -32,55 +41,34 @@ function AgregarProducto() {
         });
     };
 
-    const guardarProducto = (e) => {
+    // envia el producto a la API (POST /productos). el codigo repetido lo valida el backend (409)
+    const guardarProducto = async (e) => {
         e.preventDefault();
-
-        if (!esAdmin) return;
-
-        const guardados = localStorage.getItem("productos");
-        const listaProductos = guardados
-            ? JSON.parse(guardados)
-            : productos;
-
-        const codigo = nuevoProducto.codigo.trim();
-
-        if (
-            listaProductos.some(
-                (producto) =>
-                    producto.codigo.toLowerCase() === codigo.toLowerCase()
-            )
-        ) {
-            alert("Ya existe un producto con ese código");
-            return;
-        }
+        setError('');
+        setGuardando(true);
 
         const productoFinal = {
             ...nuevoProducto,
-            codigo: codigo,
+            codigo: nuevoProducto.codigo.trim(),
             nombre: nuevoProducto.nombre.trim(),
+            marca: nuevoProducto.marca.trim(),
             precio: Number(nuevoProducto.precio),
             stock: Number(nuevoProducto.stock),
+            categoriaId: Number(nuevoProducto.categoriaId),
             imagen: "/img/productosNuevos/nuevo.png"
         };
 
-        const nuevaLista = [...listaProductos, productoFinal];
-
-        localStorage.setItem(
-            "productos",
-            JSON.stringify(nuevaLista)
-        );
-
-        alert("Producto agregado correctamente");
-        navigate("/catalogo");
+        try {
+            await crearProducto(productoFinal);
+            alert("Producto agregado correctamente");
+            navigate("/catalogo");
+        } catch (err) {
+            const detalle = err.campos ? Object.values(err.campos).join('. ') : '';
+            setError(detalle ? `${err.message}: ${detalle}` : err.message);
+        } finally {
+            setGuardando(false);
+        }
     };
-
-    if (!esAdmin) {
-        return (
-            <Container className="my-5">
-                <h2>No tienes permiso para acceder a esta página.</h2>
-            </Container>
-        );
-    }
 
     return (
         <Container className="agregar-producto-container my-5">
@@ -90,11 +78,14 @@ function AgregarProducto() {
 
             <Form onSubmit={guardarProducto} className="formulario-producto">
 
+                <Mensaje texto={error} tipo="error" />
+
                 <Form.Group className="mb-3">
                     <Form.Label>Código</Form.Label>
                     <Form.Control
                         type="text"
                         name="codigo"
+                        placeholder="Ej: GA006"
                         value={nuevoProducto.codigo}
                         onChange={cambiarDato}
                         required
@@ -115,19 +106,17 @@ function AgregarProducto() {
                 <Form.Group className="mb-3">
                     <Form.Label>Categoría</Form.Label>
                     <Form.Select
-                        name="categoria"
-                        value={nuevoProducto.categoria}
+                        name="categoriaId"
+                        value={nuevoProducto.categoriaId}
                         onChange={cambiarDato}
                         required
                     >
                         <option value="">Seleccionar categoría</option>
-                        {[...new Set(productos.map(p => p.categoria))].map(
-                            (categoria) => (
-                                <option key={categoria} value={categoria}>
-                                    {categoria}
-                                </option>
-                            )
-                        )}
+                        {categorias.map((categoria) => (
+                            <option key={categoria.id} value={categoria.id}>
+                                {categoria.nombre}
+                            </option>
+                        ))}
                     </Form.Select>
                 </Form.Group>
 
@@ -190,8 +179,8 @@ function AgregarProducto() {
                 </Form.Group>
 
                 <div className="d-flex gap-3">
-                    <Button variant="warning" type="submit">
-                        Guardar producto
+                    <Button variant="warning" type="submit" disabled={guardando}>
+                        {guardando ? "Guardando..." : "Guardar producto"}
                     </Button>
 
                     <Button

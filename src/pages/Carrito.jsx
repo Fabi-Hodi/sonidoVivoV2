@@ -39,6 +39,7 @@ function Carrito(){
                                     precio={producto.precio}
                                     imagen={producto.imagen}
                                     cantidad={producto.cantidad}
+                                    stock={producto.stock}
                                 />
                             ))
                         )}

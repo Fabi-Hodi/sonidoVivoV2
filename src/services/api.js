@@ -82,4 +82,52 @@ export function reactivarUsuario(id) {
     return api.patch(`/usuarios/${id}/reactivar`);
 }
 
+// ---------- catalogo ----------
+
+export function listarProductos() {
+    return api.get('/productos');
+}
+
+export function obtenerProductoPorCodigo(codigo) {
+    return api.get(`/productos/codigo/${codigo}`);
+}
+
+export function listarCategorias() {
+    return api.get('/categorias');
+}
+
+export function crearProducto(producto) {
+    return api.post('/productos', producto);
+}
+
+export function actualizarProducto(id, producto) {
+    return api.put(`/productos/${id}`, producto);
+}
+
+export function borrarProducto(id) {
+    return api.delete(`/productos/${id}`);
+}
+
+// ---------- pedidos ----------
+
+export function crearPedido(pedido) {
+    return api.post('/pedidos', pedido);
+}
+
+export function listarPedidos() {
+    return api.get('/pedidos');
+}
+
+export function obtenerPedido(id) {
+    return api.get(`/pedidos/${id}`);
+}
+
+export function cambiarEstadoPedido(id, estado) {
+    return api.patch(`/pedidos/${id}/estado`, { estado });
+}
+
+export function cancelarPedido(id) {
+    return api.patch(`/pedidos/${id}/cancelar`);
+}
+
 export default api;

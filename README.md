@@ -65,6 +65,7 @@ src
 │   ├── Login.jsx
 │   ├── noEncontrado.jsx
 │   ├── Pago.jsx
+│   ├── Pedidos.jsx
 │   └── Resultado.jsx
 │
 ├── rutas
@@ -119,8 +120,9 @@ src
 - ver las Categorías
 - ver Detalle del producto
 - ver Carrito de sus compras
-- Confirmar su compra
+- Confirmar su compra (se crea el pedido en la API y se descuenta el stock)
 - ver resultado de su compra
+- ver sus pedidos, su detalle y cancelarlos mientras estén pendientes
   
 ### Administrador
 - Crear productos
@@ -128,6 +130,10 @@ src
 - Actualizar productos
 - Eliminar productos
 - Gestionar usuarios: listar, crear, editar, cambiar rol, desactivar y reactivar
+- Ver todos los pedidos y cambiar su estado
+
+### Vendedor
+- Ver todos los pedidos y cambiar su estado (pendiente, pagado, enviado, entregado o cancelado)
 
 
 ## Instalación
@@ -181,6 +187,10 @@ La sesión (token y usuario) se guarda en `localStorage` mediante `src/services/
 - **Crear cuenta** (`POST /auth/register`): muestra "Creando cuenta..." mientras espera, un mensaje de exito y los errores que devuelve el servidor (datos invalidos o correo repetido).
 - **Iniciar sesion** (`POST /auth/login`): muestra "Ingresando...", guarda el token y los datos del usuario y muestra un error si el correo o la contraseña son incorrectos.
 - **Cerrar sesion**: borra el token y los datos del usuario del navegador.
+- **Catálogo** (`GET /productos`, `GET /productos/codigo/{codigo}`): los productos, su precio y su stock vienen de la base de datos.
+- **Agregar, editar y eliminar productos** (`POST`, `PUT` y `DELETE /productos`): solo Administrador.
+- **Pago** (`POST /pedidos`): envía los productos del carrito, el tipo de entrega y solo los 4 últimos dígitos de la tarjeta. Si un producto no tiene stock suficiente, el backend responde 409 y se muestra el mensaje.
+- **Pedidos** (`GET /pedidos`, `GET /pedidos/{id}`, `PATCH /pedidos/{id}/estado`, `PATCH /pedidos/{id}/cancelar`): el cliente ve y cancela sus pedidos; Administrador y Vendedor ven todos y cambian el estado.
 
 ## Estado de la integración
 
@@ -193,3 +203,7 @@ La sesión (token y usuario) se guarda en `localStorage` mediante `src/services/
 | Rutas protegidas por sesión y por rol | Sí | Sí | Sí (25-11-2026) |
 | Conexión con la API usando axios | Sí | Sí | Sí (27-11-2026) |
 | Gestión de usuarios (administrador) | Sí | Sí | Sí (28-11-2026) |
+| Catálogo desde la API | Sí | Sí | No |
+| Agregar, editar y eliminar productos con la API | Sí | Sí | No |
+| Compra que crea el pedido en la API (regla de stock) | Sí | Sí | No |
+| Mis pedidos y gestión de pedidos (Administrador y Vendedor) | Sí | Sí | No |
